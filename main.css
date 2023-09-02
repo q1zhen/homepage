@@ -59,13 +59,13 @@ small, small * {
 	align-items: center;
 	justify-content: center;
 }
-
 #card {
 	height: fit-content;
 	border-radius: 48px;
 	background: linear-gradient(-45deg, #8e9eab, #eef2f3);
 	animation: pop 0.5s ease-out;
 	box-shadow: 0 0 20px rgba(0 0 0 / 50%);
+	margin: 48px 0;
 }
 
 #card-inner {
