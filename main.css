@@ -47,7 +47,8 @@ h6 {
 	font-size: 24px;
 }
 
-small, small * {
+small,
+small * {
 	font-size: 12px;
 }
 
@@ -59,11 +60,12 @@ small, small * {
 	align-items: center;
 	justify-content: center;
 }
+
 #card {
 	height: fit-content;
 	border-radius: 48px;
 	background: linear-gradient(-45deg, #8e9eab, #eef2f3);
-	animation: pop 0.5s ease-out;
+	animation: pop 0.8s ease-out;
 	box-shadow: 0 0 20px rgba(0 0 0 / 50%);
 	margin: 48px 0;
 }
@@ -75,14 +77,6 @@ small, small * {
 #card-left,
 #card-right {
 	padding: 48px 64px;
-}
-
-#card-left>* {
-	animation: floatleft 0.8s ease-out;
-}
-
-#card-right>* {
-	animation: floatright 1.2s ease-out;
 }
 
 #buttons {
@@ -152,6 +146,14 @@ small, small * {
 		border-bottom: 1px solid #a19f9d;
 		text-align: center;
 	}
+
+	#card-left>* {
+		animation: floatdown 0.8s ease-out;
+	}
+
+	#card-right>* {
+		animation: floatup 1.2s ease-out;
+	}
 }
 
 @media screen and (min-width: 769px) {
@@ -182,6 +184,14 @@ small, small * {
 	#card-right {
 		width: 40%;
 	}
+
+	#card-left>* {
+		animation: floatleft 0.8s ease-out;
+	}
+
+	#card-right>* {
+		animation: floatright 1.2s ease-out;
+	}
 }
 
 @keyframes pop {
@@ -189,9 +199,13 @@ small, small * {
 		opacity: 0.5;
 	}
 
-	25% {
-		transform: scale(0.95);
+	20% {
+		transform: scale(0.98);
 		opacity: 0.5;
+	}
+
+	60% {
+		transform: scale(0.95);
 	}
 
 	75% {
@@ -202,6 +216,13 @@ small, small * {
 @keyframes floatup {
 	from {
 		transform: translateY(32px);
+		opacity: 0.1;
+	}
+}
+
+@keyframes floatdown {
+	from {
+		transform: translateY(-32px);
 		opacity: 0.1;
 	}
 }
