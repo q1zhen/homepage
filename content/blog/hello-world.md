@@ -21,7 +21,7 @@ Finally I came to a minimalist design, still using vanilla HTML, but this time a
 
 ## Refactoring using Astro
 
-Recently, I decided to refactor the whole thing and keep a easy-to-maintain and elegant website. I concluded that:
+Recently, I decided to refactor the whole thing and keep an easy-to-maintain and elegant website. I concluded that:
 - I do not need something designed for blog posts. I do not write blogs very often. Such frameworks and templates limit a lot.
 - I do not need fancy things that require lots of code either. There is still need to make the process of updating the contents fast and easy; I may still write something on my website.
 
