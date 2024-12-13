@@ -5,9 +5,9 @@ description: Connect WSL to local area network to use Windows proxy.
 date: 2024-12-13
 ---
 
-The solution is rather simple. Edit `%USERPROFILE%\.wslconfig%` and enter:
+The solution is rather simple. Edit `%USERPROFILE%\.wslconfig` and enter:
 
-```conf
+```toml
 [experimental]
 autoMemoryReclaim=gradual # gradual | dropcache | disabled
 networkingMode=mirrored
