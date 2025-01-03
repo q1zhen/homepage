@@ -5,8 +5,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        body: ["Space Grotesk", "sans-serif"],
-        heading: ["Space Grotesk", "sans-serif"],
+        body: ["Geist", "sans-serif"],
+        heading: ["Geist", "sans-serif"],
       },
       colors: {
         transparent: "transparent",
@@ -28,7 +28,7 @@ module.exports = {
         bg: {
           body: "rgb(var(--color-bg-body) / <alpha-value>)",
           code: "rgb(var(--color-bg-code) / <alpha-value>)",
-          selection: "rgb(var(--color-bg-selection) / <alpha-value>)",
+          selection: "rgb(var(--color-bg-selection) / 0.2)",
         },
         border: {
           code: "rgb(var(--color-border-code) / <alpha-value>)",
@@ -56,6 +56,9 @@ module.exports = {
             },
             "code::after": {
               content: "none",
+            },
+            "code": {
+              fontFamily: '"Geist Mono", monospace',
             },
             blockquote: {
               border: "none",

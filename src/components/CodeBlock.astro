@@ -20,7 +20,7 @@ const { language, content } = Astro.props;
   pre[class*="language-"] {
     color: #e3eaf2;
     background: none;
-    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    font-family: "Geist Mono", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     text-align: left;
     white-space: pre;
     word-spacing: normal;
@@ -59,7 +59,8 @@ const { language, content } = Astro.props;
 
   :not(pre) > code[class*="language-"],
   pre[class*="language-"] {
-    background: #111b27;
+    background: #000000;
+	border: 1px solid #242424;
   }
 
   /* Inline code */
