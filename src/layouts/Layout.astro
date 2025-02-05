@@ -1,0 +1,14 @@
+---
+import LayoutBase from "../layouts/LayoutBase.astro";
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
+---
+
+<LayoutBase>
+	<slot slot="meta" name="meta" />
+	<Nav slot="header" />
+	<div id="main-container" slot="main">
+		<slot name="main" />
+	</div>
+	<Footer slot="footer" />
+</LayoutBase>

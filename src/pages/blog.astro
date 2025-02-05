@@ -1,67 +1,46 @@
 ---
-import { readAll } from "../lib/markdoc/read";
-import { blog } from "../lib/markdoc/frontmatter.schema";
-import PageLayout from "../layouts/PageLayout.astro";
+import Layout from "../layouts/Layout.astro";
 import PageMeta from "../components/PageMeta.astro";
-import { SITE_TITLE } from "../config";
+import { getCollection } from "astro:content";
 
-const posts = await readAll({
-	directory: "blog",
-	frontmatterSchema: blog,
-});
-
+const posts = await getCollection("blog");
 const sortedPosts = posts
-	.filter((p) => p.frontmatter.draft !== true)
+	.filter((p) => p.data.draft !== true)
 	.sort(
 		(a, b) =>
-			new Date(b.frontmatter.date).valueOf() -
-			new Date(a.frontmatter.date).valueOf()
+			new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
 	);
 ---
 
-<PageLayout>
-	<PageMeta title={`Blog | ${SITE_TITLE}`} slot="meta" />
-	<section slot="main">
-		<ul>
-			{
-				sortedPosts.map((post) => {
-					const formattedDate = new Date(
-						post.frontmatter.date
-					).toLocaleDateString("en-us", {
-						year: "numeric",
-						month: "short",
-						day: "numeric",
-					});
-					return (
-						<li class="mb-3">
-							<div class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] md:gap-2 items-start">
-								<div class="title font-bold">
-									{post.frontmatter.external ? (
-										<a href={post.frontmatter.url} target="_blank" class="unset transition-[background-size] duration-300 bg-gradient-to-r bg-left-bottom bg-no-repeat bg-[length:0%_55%] hover:bg-[length:100%_55%] from-slate-300 to-slate-300 dark:from-slate-600 dark:to-slate-600">
-											<span>{post.frontmatter.title}</span>
-											<span>
-												<i class="ml-1 mr-1 text-[12px] pb-2 fa-solid fa-up-right-from-square" />
-											</span>
-										</a>
-									) : (
-										<a href={`/blog/${post.slug}`} class="unset transition-[background-size] duration-300 bg-gradient-to-r bg-left-bottom bg-no-repeat bg-[length:0%_55%] hover:bg-[length:100%_55%] from-slate-300 to-slate-300 dark:from-slate-600 dark:to-slate-600">
-											{post.frontmatter.title}
-										</a>
-									)}
-								</div>
-								<div class="text-text-muted text-sm italic pt-1">
-									<time datetime={post.frontmatter.date.toISOString()}>
-										{formattedDate}
-									</time>
-								</div>
+<Layout>
+	<PageMeta title="Blog" slot="meta" />
+	<div slot="main">
+		<h1><span>Blog posts</span></h1>
+		{
+			sortedPosts.map((post) => {
+				const formattedDate = new Date(
+					post.data.date,
+				).toLocaleDateString("en-us", {
+					year: "numeric",
+					month: "short",
+					day: "numeric",
+				});
+				return (
+					<div class="post-entry">
+						<div class="post-entry-inner">
+							<div class="first-line">
+								<h3>
+									<a href={`/blog/${post.id}`}>
+										{post.data.title}
+									</a>
+								</h3>
+								<div class="date">{formattedDate}</div>
 							</div>
-							<div class="text-sm">
-								{post.frontmatter.description}
-							</div>
-						</li>
-					);
-				})
-			}
-		</ul>
-	</section>
-</PageLayout>
+							<div>{post.data.description}</div>
+						</div>
+					</div>
+				);
+			})
+		}
+	</div>
+</Layout>

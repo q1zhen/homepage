@@ -1,0 +1,96 @@
+---
+import PageMeta from "../components/PageMeta.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+import { SITE_TITLE } from "../config";
+---
+
+<PageLayout>
+	<PageMeta title={`${SITE_TITLE}`} slot="meta" />
+	<Fragment slot="main">
+		<section class="mb-8">
+			<div class="mb-5">
+				<h1
+					class="font-bold text-text-heading text-4xl md:text-5xl pt-4 pb-2 overflow-hidden"
+				>
+					<span
+						class="bg-gradient-to-bl bg-no-repeat bg-bottom bg-[length:90%_40%] from-primary-blue to-primary-black dark:from-primary-blue dark:to-primary-blue"
+					>
+						@q1zhen
+					</span>
+				</h1>
+				<p class="text-xl pb-4">IB student. Tech enthusiast.</p>
+			</div>
+			<div class="mb-5">
+				<p>
+					<a
+						class="text-lg font-bold unset hover:text-primary-green"
+						href="https://github.com/q1zhen"
+					>
+						<i class="fa-brands fa-github"></i>
+						@q1zhen
+					</a>
+				</p>
+				<p>
+					<a
+						class="text-lg font-bold unset hover:text-primary-blue"
+						href="https://twitter.com/q1zhen_"
+					>
+						<i class="fa-brands fa-twitter"></i>
+						@q1zhen_
+					</a>
+				</p>
+				<p>
+					<a
+						class="text-lg font-bold unset hover:text-primary-yellow"
+						href="mailto:hi@qizhen-yang.cn"
+					>
+						<i class="fa-solid fa-envelope"></i>
+						hi@qizhen-yang.cn
+					</a>
+				</p>
+			</div>
+			<div class="mb-5">
+				<p>Hello!</p>
+				<p>
+					This is <b>Qizhen Yang</b>. Welcome to my website.
+				</p>
+				<p>
+					Here is where I create, break, and write about things.
+				</p>
+			</div>
+			<div class="mb-5">
+				Have a glance at:
+				<ul>
+					<li class="!my-0"><a href="/blog">My blog</a></li>
+					<li class="!my-0"><a href="/projects">Some projects and useful tools</a></li>
+					<li class="!my-0">
+						<a href="https://computerization.io/" class="mr-1">
+							Computerization Club
+							<i class="text-[12px] pb-2 fa-solid fa-up-right-from-square"></i>
+						</a>
+						(<a href="https://github.com/Computerization">GitHub</a>), where I am the current club leader.
+					</li>
+				</ul>
+			</div>
+			<div class="mb-5">
+				<h3 class="text-lg font-bold">Skills & Tools</h3>
+				<img class="inline-block" src="https://img.shields.io/badge/C%2B%2B-512BD4?logo=cplusplus&style=for-the-badge" alt="C++"/>
+				<img class="inline-block" src="https://img.shields.io/badge/JavaScript-000000?logo=javascript&style=for-the-badge" alt="JavaScript"/>
+				<img class="inline-block" src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&style=for-the-badge&logoColor=ffffff" alt="TypeScript"/>
+				<img class="inline-block" src="https://img.shields.io/badge/Python-3776AB?logo=python&style=for-the-badge&logoColor=ffdd54" alt="Python"/>
+				<img class="inline-block" src="https://img.shields.io/badge/C-A8B9CC?logo=c&style=for-the-badge&logoColor=000000" alt="C"/>
+				<img class="inline-block" src="https://img.shields.io/badge/Node.js-5FA04E?logo=nodedotjs&style=for-the-badge&logoColor=ffffff" alt="Node.js"/>
+				<img class="inline-block" src="https://img.shields.io/badge/Vue.js-4FC08D?logo=vuedotjs&style=for-the-badge&logoColor=ffffff" alt="Vue.js"/>
+				<img class="inline-block" src="https://img.shields.io/badge/Nuxt.js-00DC82?logo=nuxt&style=for-the-badge&logoColor=ffffff" alt="Nuxt.js"/>
+				<img class="inline-block" src="https://img.shields.io/badge/Electron-47848F?logo=electron&style=for-the-badge&logoColor=ffffff" alt="Electron"/>
+				<img class="inline-block" src="https://img.shields.io/badge/NumPy-013243?logo=numpy&style=for-the-badge&logoColor=ffffff" alt="NumPy"/>
+				<img class="inline-block" src="https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&style=for-the-badge&logoColor=ffffff" alt="PyTorch"/>
+				<img class="inline-block" src="https://img.shields.io/badge/LaTeX-008080?logo=latex&style=for-the-badge" alt="LaTeX"/>
+				<img class="inline-block" src="https://img.shields.io/badge/Git-F05032?logo=git&style=for-the-badge&logoColor=ffffff" alt="Git"/>
+				<img class="inline-block" src="https://img.shields.io/badge/AutoHotkey-334455?logo=autohotkey&style=for-the-badge" alt="AutoHotkey"/>
+				<img class="inline-block" src="https://img.shields.io/badge/Arduino-00878F?logo=arduino&style=for-the-badge" alt="Arduino"/>
+			</div>
+		</section>
+	</Fragment>
+</PageLayout>
+
