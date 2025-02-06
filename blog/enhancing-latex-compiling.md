@@ -11,7 +11,7 @@ This can be simply solved by using LaTeX from a Linux subsystem.
 
 ## Configuring WSL2
 
-![Turn Windows features on or off](/images/windows-features.png)
+![Turn Windows features on or off](../src/assets/windows-features.png)
 
 First, type "Turn Windows features on or off" in taskbar search and check on "Windows Subsystem for Linux".
 

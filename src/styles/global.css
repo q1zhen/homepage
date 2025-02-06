@@ -52,7 +52,6 @@
 		width: 30%;
 		font-size: 1.6rem;
 		text-align: right;
-		padding: 6rem 0;
 		ul {
 			list-style: none;
 			padding: 0;
@@ -126,16 +125,22 @@ footer {
 	margin-bottom: 1rem;
 }
 
-h1 > * {
-	display: inline;
-	background-color: #000000;
-	color: #ffffff;
+h1 {
+	&:has(*) {
+		line-height: 1;
+		margin-bottom: 2rem;
+	}
+	& > * {
+		display: inline;
+		background-color: #000000;
+		color: #ffffff;
+	}
 }
 
 .post-entry {
 	display: flex;
 	flex-direction: row;
-	margin-bottom: 2rem;
+	margin: 1.5rem 0 0.5rem;
 	align-items: start;
 	.post-entry-inner {
 		width: 100%;
@@ -182,4 +187,3 @@ h1 > * {
 		content: " <";
 	}
 }
-
