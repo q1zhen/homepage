@@ -1,6 +1,7 @@
 ---
-import { getEntry, render, getCollection } from "astro:content";
+import { render, getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import PageMeta from "../../components/PageMeta.astro";
 
 export async function getStaticPaths() {
 	const posts = await getCollection("blog");
@@ -20,6 +21,7 @@ const formattedDate = new Date(post.data.date).toLocaleDateString("en-us", {
 ---
 
 <Layout>
+	<PageMeta title={post.data.title} slot="meta" />
 	<article slot="main">
 		<h1><span>{post.data.title}</span></h1>
 		<p class="date">{formattedDate}</p>

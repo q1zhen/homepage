@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageMeta from "../components/PageMeta.astro";
+---
+
+<Layout>
+	<PageMeta title="About" slot="meta" />
+	<div slot="main" id="about-container">
+		<div id="about-grid">
+			<div id="bubble">
+				<div class="fade">
+					<div class="fade">About</div>
+					About
+				</div>
+				About
+				<div class="fade">
+					About
+					<div class="fade">About</div>
+				</div>
+			</div>
+			<div id="about-intro">
+				<div class="larger">About Me</div>
+				<div>
+					Hi! My name is Qizhen Yang, currently an IB student. I love tech.
+				</div>
+			</div>
+		</div>
+		<div>
+			<div class="larger">About this website</div>
+			<div class="small">
+				GitHub: <a href="https://github.com/q1zhen/homepage">q1zhen/homepage</a>
+			</div>
+			<div>
+				This is probabily the 5th refactorization of the website. This time, the contents are inherited from the previous version with a completely new interface. I hope you like it!
+			</div>
+			<div class="small">
+				I've been trying to make this website as lightweight as possible, but still keeping the functionality. This version of the website is 100% original, without the use of any preexisting templates, and Astro is only used for filling static contents. Only vanilla HTML5 and CSS (with some experimental features) are used.
+			</div>
+			<div class="large">
+				Though I didn't intentionally make this website responsive, it still works on mobile devices with cool looks XD
+			</div>
+			<div>
+				I'm not sure if I still have time to maintain the website or write something in the blog, but I'll try my best to keep it up-to-date.
+			</div>
+		</div>
+	</div>
+</Layout>
