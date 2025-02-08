@@ -7,7 +7,7 @@ import Nav from "../components/Nav.astro";
 <LayoutBase>
 	<slot slot="meta" name="meta" />
 	<Nav slot="header" />
-	<div id="main-container" slot="main">
+	<div id="main-container" slot="main" transition:animate="slide">
 		<slot name="main" />
 	</div>
 	<Footer slot="footer" />

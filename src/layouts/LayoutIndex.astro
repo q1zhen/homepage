@@ -5,7 +5,7 @@ import Footer from "../components/Footer.astro";
 
 <LayoutBase>
 	<slot slot="meta" name="meta" />
-	<div id="main-container" slot="main">
+	<div id="main-container" slot="main" transition:animate="slide">
 		<slot name="main" />
 	</div>
 	<Footer slot="footer" />
