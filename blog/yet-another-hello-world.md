@@ -1,7 +1,7 @@
 ---
 external: false
 title: Yet another Hello World
-description: An attempt to make a lightweight site
+description: An attempt to make this site lightweight.
 date: 2025-03-02
 ---
 
