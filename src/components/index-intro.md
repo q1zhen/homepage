@@ -1,5 +1,5 @@
 [GitHub](https://github.com/q1zhen) /
-[X](https://x.com/q1zhen_) /
+[bsky](https://bsky.app/profile/q1z.dev) /
 [Email](mailto:hi@qizhen-yang.cn)
 
 Hello!  
