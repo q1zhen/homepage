@@ -1,7 +1,12 @@
 ---
-const year = new Date().getFullYear();
+const contacts = [
+	{ platform: "Email", name: "hi@q1z.dev", url: "https://github.com/q1zhen" },
+	{ platform: "GitHub", name: "@q1zhen", url: "https://github.com/q1zhen" },
+];
 ---
 
-<footer>
-	(c) 2024~{year} <a href="https://q1z.dev">Qizhen Yang</a>.
-</footer>
+<div>
+	<p>
+		&copy; 2024&ndash;{new Date().getFullYear()} Yang Chyi Jen.
+	</p>
+</div>

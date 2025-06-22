@@ -1,0 +1,31 @@
+---
+const nav = [
+	{ title: "Home", href: "/" },
+	{ title: "Blog", href: "/blog" },
+	{ title: "Projects & Tools", href: "/projects" },
+	{ title: "About", href: "/about" },
+]
+---
+
+<div class="flex flex-row xl:flex-col xl:gap-8 items-center xl:items-end justify-between">
+	<h2 class="hover:text-primary transition-all">q1zhen</h2>
+	<nav class="text-lg flex flex-row xl:flex-col gap-4 xl:gap-2">
+		{nav.map((item) => (
+			<a
+				href={item.href}
+				class:list={[
+					(
+						item.href != "/"
+							? Astro.url.pathname.startsWith(item.href)
+							: Astro.url.pathname == "/"
+					)
+						? "text-primary font-bold"
+						: "text-secondary-dimmer",
+					"hover:text-primary transition-all ease-out duration-300 xl:block border-none"
+				]}
+			>
+				{item.title}
+			</a>
+		))}
+	</nav>
+</div>

@@ -1,22 +1,12 @@
 ---
-import LayoutIndex from "../layouts/LayoutIndex.astro";
-import { Content as IndexIntro } from "../components/index-intro.md";
-import { Content as NavItems } from "../components/nav-items.md";
-import PageMeta from "../components/PageMeta.astro";
+import Base from "../layouts/Base.astro"
+import { Content as IndexMD } from "../contents/index.md"
+import Card from "../components/Card.astro"
 ---
 
-<LayoutIndex>
-	<PageMeta title="Home" slot="meta" />
-	<div id="index-container" slot="main">
-		<div id="design">
-			<div id="name">q1zhen</div>
-			<div id="quote">Even in another life, I would never wish to be anyone but myself.</div>
-			<div id="intro">
-				<IndexIntro />
-			</div>
-		</div>
-		<nav>
-			<NavItems />
-		</nav>
-	</div>
-</LayoutIndex>
+<Base>
+	<Card>
+		<IndexMD />
+	</Card>
+</Base>
+

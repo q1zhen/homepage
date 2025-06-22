@@ -1,18 +1,11 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import PageMeta from "../components/PageMeta.astro";
+import Base from "../layouts/Base.astro"
 ---
 
-<Layout>
-	<PageMeta title="Page Not Found" slot="meta" />
-	<div slot="main">
-		<div id="four-oh-four">
-			<h1>404</h1>
-			<h2>Page Not Found</h2>
-			<p>It is a lot easier to be lost than found.</p>
-			<div>
-				<a href="/">Go back to Home</a>
-			</div>
-		</div>
-	</div>
-</Layout>
+<Base>
+	<h1>404</h1>
+	<h2>PAGE NOT FOUND</h2>
+	<p>It is a lot easier to be lost than found.</p>
+	<a href="/">» Go back to home «</a>
+</Base>
+
