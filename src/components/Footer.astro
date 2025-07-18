@@ -1,12 +1,28 @@
 ---
+import { execSync } from "child_process";
+import dayjs from "dayjs";
+
 const contacts = [
-	{ platform: "Email", name: "hi@q1z.dev", url: "https://github.com/q1zhen" },
+	{ platform: "Email", name: "hi@q1z.dev", url: "mailto:hi@q1z.dev" },
 	{ platform: "GitHub", name: "@q1zhen", url: "https://github.com/q1zhen" },
 ];
+const lastModified = execSync(`git log -1 --pretty="format:%cI"`);
 ---
 
 <div>
 	<p>
-		&copy; 2024&ndash;{new Date().getFullYear()} Yang Chyi Jen.
+		This site is open-source on <a href="https://github.com/q1zhen/homepage" target="_blank">GitHub</a>.<br/>
+		Last modified at {dayjs(lastModified).format("DD MMMM YYYY")}.
+	</p>
+	<nav class="mb-8 text-stone-300">
+		{contacts.map((item) => (
+			<div>
+				<span class="font-black">{item.platform}</span>
+				<a href={item.url} target="_blank">{item.name}</a>
+			</div>
+		))}
+	</nav>
+	<p>
+		&copy; 2024&ndash;{new Date().getFullYear()} Yang Qizhen.
 	</p>
 </div>

@@ -11,6 +11,8 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.5",
     "astro": "^5.2.5",
+    "dayjs": "^1.11.13",
+    "marked": "^16.0.0",
     "sharp": "^0.33.5",
     "tailwindcss": "^4.1.5"
   },
