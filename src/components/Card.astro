@@ -1,3 +1,10 @@
-<div class="ring ring-secondary-dimmer hover:ring-primary hover:bg-transparent rounded-md bg-secondary-dim/25 p-4 transition-all ease-out duration-300 hover:shadow-xl my-2">
+<div class:list={[
+	"ring ring-secondary-dimmer rounded-md bg-secondary-dim/25 p-4 my-2 transition-all ease-out duration-300",
+	...[
+		"ring-primary",
+		"bg-transparent",
+		"shadow-xl"
+	].flatMap(item => (["active", "hover"].map(pseudo => (`${pseudo}:${item}`))))
+]}>
 	<slot/>
 </div>

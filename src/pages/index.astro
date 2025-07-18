@@ -41,7 +41,7 @@ const reservedKeys = ["description", "begin", "end", "time", "url", "abstract"]
 				}</div>
 				<h3 class="mb-0">{name}</h3>
 				{info?.url
-					? <div class="text-sm"><a href={info?.url} target="_blank">{info?.url}</a></div>
+					? <div class="text-sm mb-1"><a href={info?.url} target="_blank">{info?.url}</a></div>
 					: null
 				}
 				{info?.description
