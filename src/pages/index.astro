@@ -12,6 +12,8 @@ const reservedKeys = ["description", "begin", "end", "time", "url", "abstract"]
 
 <Base>
 
+<h1 class="mb-8">Hi!</h1>
+
 <IndexMD />
 
 <details class="text-sm my-8 w-full">
@@ -19,7 +21,7 @@ const reservedKeys = ["description", "begin", "end", "time", "url", "abstract"]
 		<b>PUBLIC KEY</b>
 		(<code>3992 5D88 A147 656C 8EAA 5261 B782 D7F5 7541 8B17</code>)
 	</summary>
-	<pre class="overflow-x-auto py-2">{ publicKey }</pre>
+	<pre class="border border-secondary-dim overflow-x-auto p-2 w-fit rounded-md my-2">{ publicKey }</pre>
 </details>
 
 <section class="mb-8">
@@ -33,23 +35,19 @@ const reservedKeys = ["description", "begin", "end", "time", "url", "abstract"]
 		<h2>{category.id}</h2>
 		{category.data ? Object.entries(category.data).map(([name, info]: [string, any]) => (
 			<Card>
-				<div class="font-sans font-bold text-stone-300">{
+				<div class="font-sans font-bold text-stone-400">{
 					info?.time ? info?.time :
 						(!info?.begin
 							? "For a long time"
 							: `${info?.begin} – ${info?.end ? info?.end : "Present"}`)
 				}</div>
-				<h3 class="mb-0">{name}</h3>
-				{info?.url
-					? <div class="text-sm mb-1"><a href={info?.url} target="_blank">{info?.url}</a></div>
-					: null
+				<h3 class="mb-0 text-stone-200">{name}</h3>
+				{info?.url &&
+					<div class="text-sm mb-1"><a href={info?.url} target="_blank">{info?.url}</a></div>
 				}
-				{info?.description
-					? <div set:html={marked.parseInline(info?.description)} />
-					: null
-				}
-				{info
-					? Object.entries(info).filter(i => !reservedKeys.includes(i[0]))
+				{info?.description && <div set:html={marked.parseInline(info?.description)} />}
+				{info &&
+					Object.entries(info).filter(i => !reservedKeys.includes(i[0]))
 						.map(([k, v]: [string, any]) => (
 							<div class="indent-[2em_hanging]">
 								{k.endsWith("URL") && v
@@ -61,11 +59,9 @@ const reservedKeys = ["description", "begin", "end", "time", "url", "abstract"]
 								}
 							</div>
 						))
-					: null
 				}
-				{info?.abstract
-					? <details><summary class="cursor-pointer"><b>Abstract</b></summary><div class="pl-[2em] text-sm" set:html={marked.parseInline(info?.abstract)} /></details>
-					: null
+				{info?.abstract &&
+					<details><summary class="cursor-pointer"><b>Abstract</b></summary><div class="pl-[2em] text-sm" set:html={marked.parseInline(info?.abstract)} /></details>
 				}
 			</Card>
 		)) : <i>No information available.</i>
@@ -74,4 +70,3 @@ const reservedKeys = ["description", "begin", "end", "time", "url", "abstract"]
 ))}
 
 </Base>
-

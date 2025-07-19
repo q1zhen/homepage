@@ -5,25 +5,33 @@ const nav = [
 	{ title: "Projects & Tools", href: "/projects" },
 	{ title: "About", href: "/about" },
 ]
+
+function selectedNav(url) {
+	return url != "/"
+		? Astro.url.pathname.startsWith(url)
+		: Astro.url.pathname == "/"
+}
 ---
 
 <div class="flex flex-row xl:flex-col xl:gap-8 items-center xl:items-end justify-between">
 	<h2 class="text-white">q1zhen</h2>
-	<nav class="text-lg flex flex-row xl:flex-col gap-4 xl:gap-2">
+	<nav class="text-lg flex flex-row flex-wrap ml-12 justify-between xl:ml-0 xl:flex-col gap-x-4 xl:gap-2">
 		{nav.map((item) => (
 			<a
 				href={item.href}
 				class:list={[
-					(
-						item.href != "/"
-							? Astro.url.pathname.startsWith(item.href)
-							: Astro.url.pathname == "/"
-					)
+					selectedNav(item.href)
 						? "text-primary"
 						: "text-secondary-dimmer",
-					"hover:text-primary transition-all ease-out duration-300 xl:block border-none font-sans font-bold"
+					"hover:text-primary transition-all ease-out duration-300 xl:block border-none font-sans font-bold group"
 				]}
 			>
+				<span class:list={[
+					selectedNav(item.href)
+						? "opacity-100"
+						: "group-hover:opacity-50 opacity-0",
+					"transition-all ease-out duration-300 w-2 h-2 bg-red-600 mr-1 inline-block"
+				]} />
 				{item.title}
 			</a>
 		))}

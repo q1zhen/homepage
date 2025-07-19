@@ -1,13 +1,20 @@
-<div class:list={[
-	"ring ring-secondary-dimmer rounded-md bg-secondary-dim/25 p-4 my-2 transition-all ease-out duration-300",
-	...[
+---
+const { class: className = "", style = "" } = Astro.props
+---
+
+<div
+	class:list={[
+		"ring ring-secondary-dimmer rounded-md p-4 my-2 transition-all ease-out duration-300",
+		"bg-secondary-dim/25",
 		"hover:ring-primary",
 		"hover:bg-transparent",
 		"hover:shadow-xl",
 		"active:ring-primary",
 		"active:bg-transparent",
 		"active:shadow-xl",
-	]
-]}>
+		className,
+	]}
+	style={style}
+>
 	<slot/>
 </div>

@@ -8,7 +8,7 @@
 	--font-serif-fallback: "Noto Serif", "Georgia", serif;
 	--font-mono: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 	--color-primary: #D6BD98;
-	--color-secondary: hsl(180, 40%, 8%);
+	--color-secondary: #0c1d1d;
 	--color-secondary-dim: #40534C;
 	--color-secondary-dimmer: #677D6A;
 }
@@ -22,10 +22,10 @@
 		@apply border-dotted border-0 border-b-2 cursor-help;
 	}
 	h1, h2, h3, h4, h5, h6 {
-		@apply font-sans font-black text-primary mb-2;
+		@apply font-sans font-bold text-primary mb-2;
 	}
 	h1 { @apply text-6xl; }
-	h2 { @apply text-3xl; }
+	h2 { @apply text-2xl; }
 	h3 { @apply text-xl; }
 	p:not(:last-child) {
 		@apply mb-3;

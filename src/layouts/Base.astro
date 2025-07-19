@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { ClientRouter } from "astro:transitions";
 ---
 
 <html lang="en">
@@ -9,13 +10,14 @@ import Footer from "../components/Footer.astro";
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Yang Qizhen</title>
+		<ClientRouter />
 	</head>
 	<body>
 		<div class="flex flex-col w-full xl:flex-row xl:justify-center items-center xl:items-start gap-4 xl:gap-8 p-4">
 			<header class="xl:sticky xl:top-4 w-full md:w-3xl xl:w-sm text-center xl:[text-align-last:right]">
 				<Header />
 			</header>
-			<main class="w-full md:w-3xl">
+			<main class="w-full md:w-3xl" transition:animate="fade">
 				<slot />
 			</main>
 			<footer class="xl:sticky xl:top-4 w-full md:w-3xl xl:w-sm">
