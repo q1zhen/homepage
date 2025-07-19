@@ -13,6 +13,10 @@
 	--color-secondary-dimmer: #677D6A;
 }
 
+@utility font-slab {
+	font-size: 108%;
+}
+
 @layer base {
 	html {
 		@apply font-sans bg-secondary text-stone-200 hyphens-auto;
