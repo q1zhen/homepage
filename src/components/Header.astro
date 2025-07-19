@@ -6,10 +6,12 @@ const nav = [
 	{ title: "About", href: "/about" },
 ]
 
+const current = Astro.url.pathname
+
 function selectedNav(url) {
 	return url != "/"
-		? Astro.url.pathname.startsWith(url)
-		: Astro.url.pathname == "/"
+		? current.startsWith(url)
+		: current == "/"
 }
 ---
 
