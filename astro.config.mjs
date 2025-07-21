@@ -6,5 +6,9 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
 	vite: {
 		plugins: [tailwindcss()],
+	},
+	redirects: {
+		"/blog/post": "/blog",
+		"/blog/category": "/blog",
 	}
 });

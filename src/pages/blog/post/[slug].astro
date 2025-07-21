@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../../layouts/Base.astro";
+import dayjs from "dayjs";
+
+export async function getStaticPaths() {
+	const blogEntries = await getCollection("blog");
+	return blogEntries.map((entry) => ({
+		params: { slug: entry.id },
+		props: { entry },
+	}));
+}
+
+const { entry } = Astro.props;
+---
+
+
+<Base>
+	<div class="mt-2">
+		<a href="/blog">« Back to all web logs</a>
+	</div>
+	<h1 class="mt-4">{entry.data.title}</h1>
+	<div class="mb-8 text-stone-400">
+		<time>{dayjs(entry.data.date).format("D MMMM YYYY")}</time>
+		&CenterDot;
+		<a class="uppercase" href={"/blog/category/" + entry.data.category}>{entry.data.category}</a>
+		&CenterDot;
+		<span>{entry.data.description}</span>
+	</div>
+	<article set:html={entry.rendered.html} />
+</Base>

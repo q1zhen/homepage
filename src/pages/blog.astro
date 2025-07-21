@@ -1,0 +1,43 @@
+---
+import BlogCard from "../components/BlogCard.astro"
+import Base from "../layouts/Base.astro"
+import { getCollection } from 'astro:content'
+
+const blog = await getCollection("blog")
+const postsByYear = blog.reduce((acc, post) => {
+	const year = new Date(post.data.date).getFullYear();
+	if (!acc[year]) acc[year] = [];
+	acc[year].unshift(post);
+	return acc;
+}, {});
+
+const years = Object.keys(postsByYear)
+	.map(Number)
+	.sort((a, b) => b - a);
+
+const categories = [...new Set(blog.map((post) => post.data.category))]
+---
+
+<Base>
+	<h1>My We<span class="text-white">b Log</span>s</h1>
+	<p class="mt-8">Here is where I create, break, and write about things.</p>
+	<p class="mb-12">
+		Browse by category:
+		{categories.sort(((a, b) => a > b ? 1 : -1))
+		.map((cat, i) => (
+			<>
+				<a class="uppercase" href={"/blog/category/" + cat}>{cat}</a>{i < categories.length - 1 && ", "}
+			</>
+		))}.
+	</p>
+	{years.map((year) => (
+		<section class="mb-8">
+			<h2>{year}</h2>
+			{postsByYear[year].sort((a, b) =>
+				new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+			).map((post) => (
+				<BlogCard post={post} />
+			))}
+		</section>
+	))}
+</Base>

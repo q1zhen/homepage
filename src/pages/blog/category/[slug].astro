@@ -1,0 +1,40 @@
+---
+import BlogCard from "../../../components/BlogCard.astro"
+import Base from "../../../layouts/Base.astro"
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content'
+ 
+interface Props { category: string, posts: CollectionEntry<'blog'>[] }
+
+export async function getStaticPaths() {
+	const blogEntries = await getCollection("blog");
+	const categories = {}
+	blogEntries.forEach((entry) => {
+		if (!categories[entry.data.category]) categories[entry.data.category] = [];
+		categories[entry.data.category].push(entry);
+	})
+	return Object.entries(categories).map((cat) => {
+		return {
+			params: { slug: cat[0] },
+			props: { category: cat[0], posts: cat[1] },
+		}
+	})
+}
+
+const { category, posts } = Astro.props;
+---
+
+<Base>
+	<div class="mt-2">
+		<a href="/blog">« Back to all web logs</a>
+	</div>
+	<h1 class="mt-4 mb-16">
+		Category: <br/>
+		<span class="uppercase">{category}</span>
+	</h1>
+	{posts.sort((a, b) =>
+		new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+	).map(post => (
+		<BlogCard post={post} />
+	))}
+</Base>

@@ -12,7 +12,7 @@ const lastModified = execSync(`git log -1 --pretty="format:%cI"`);
 <div>
 	<p>
 		This site is open-source on <a href="https://github.com/q1zhen/homepage" target="_blank">GitHub</a>.<br/>
-		Last modified at {dayjs(lastModified).format("DD MMMM YYYY")}.
+		Last modified at <time datetime={lastModified}>{dayjs(lastModified).format("D MMMM YYYY")}</time>.
 	</p>
 	<nav class="mb-8 text-stone-300">
 		{contacts.map((item) => (
@@ -23,6 +23,6 @@ const lastModified = execSync(`git log -1 --pretty="format:%cI"`);
 		))}
 	</nav>
 	<p>
-		&copy; 2024&ndash;{new Date().getFullYear()} Yang Qizhen.
+		&copy; <time>2024&ndash;{new Date().getFullYear()}</time> Yang Qizhen.
 	</p>
 </div>

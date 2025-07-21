@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 @import "tailwindcss";
 
 @theme {
 	--font-sans: "Figtree", "Noto Sans", ui-sans-serif, system-ui, sans-serif;
-	--font-slab: "Zilla Slab", var(--font-serif-fallback);
-	--font-serif: "Libre Baskerville", var(--font-serif-fallback);
-	--font-serif-fallback: "Noto Serif", "Georgia", serif;
+	--font-serif: "Newsreader", "Noto Serif", "Georgia", serif;
 	--font-mono: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 	--color-primary: #D6BD98;
 	--color-secondary: #0c1d1d;
@@ -13,26 +11,25 @@
 	--color-secondary-dimmer: #677D6A;
 }
 
-@utility font-slab {
-	font-size: 108%;
-}
-
 @layer base {
 	html {
-		@apply font-sans bg-secondary text-stone-200 hyphens-auto;
+		@apply font-medium font-sans bg-secondary text-stone-200 hyphens-auto text-justify;
 	}
 	dfn {
 		all: unset;
 		@apply border-dotted border-0 border-b-2 cursor-help;
 	}
 	h1, h2, h3, h4, h5, h6 {
-		@apply font-sans font-bold text-primary mb-2;
+		@apply font-sans font-bold text-primary mb-4 text-left;
 	}
-	h1 { @apply text-6xl; }
+	.Card :is(h1, h2, h3, h4, h5, h6) {
+		@apply text-white;
+	}
+	h1 { @apply text-6xl mb-8; }
 	h2 { @apply text-2xl; }
 	h3 { @apply text-xl; }
-	p:not(:last-child) {
-		@apply mb-3;
+	p:not(:last-child):not(:has(+ pre)) {
+		@apply mb-4;
 	}
 	b, strong {
 		@apply text-white;
@@ -40,10 +37,25 @@
 	::selection {
 		@apply bg-primary text-secondary;
 	}
-	a {
-		@apply border-b border-secondary-dimmer transition-colors duration-300 ease-out font-slab;
+	a:not(.clear) {
+		@apply border-b border-secondary-dimmer transition-colors duration-300 ease-out text-amber-50;
 	}
-	a:hover {
+	a:not(.clear):hover {
 		@apply text-primary border-stone-500;
+	}
+	code {
+		@apply text-sm;
+	}
+	pre {
+		@apply border border-secondary-dim p-2 rounded-md mt-2 mb-4 w-full box-border  overflow-x-auto text-sm !bg-transparent;
+	}
+	code:not(pre code) {
+		@apply border border-secondary-dim px-0.5 rounded-sm;
+	}
+	time {
+		@apply tabular-nums;
+	}
+	article {
+		@apply font-serif text-lg;
 	}
 }

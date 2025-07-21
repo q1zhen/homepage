@@ -12,7 +12,7 @@ const reservedKeys = ["description", "begin", "end", "time", "url", "abstract"]
 
 <Base>
 
-<h1 class="mb-8">Hi!</h1>
+<h1>Hi!</h1>
 
 <IndexMD />
 
@@ -21,7 +21,7 @@ const reservedKeys = ["description", "begin", "end", "time", "url", "abstract"]
 		<b>PUBLIC KEY</b>
 		(<code>3992 5D88 A147 656C 8EAA 5261 B782 D7F5 7541 8B17</code>)
 	</summary>
-	<pre class="border border-secondary-dim overflow-x-auto p-2 w-fit max-w-full rounded-md my-2">{ publicKey }</pre>
+	<pre class="w-fit max-w-full">{ publicKey }</pre>
 </details>
 
 <section class="mb-8">
@@ -35,13 +35,13 @@ const reservedKeys = ["description", "begin", "end", "time", "url", "abstract"]
 		<h2>{category.id}</h2>
 		{category.data ? Object.entries(category.data).map(([name, info]: [string, any]) => (
 			<Card>
-				<div class="font-sans text-sm font-bold text-stone-300">{
+				<div class="font-sans text-sm font-bold text-stone-400">{
 					info?.time ? info?.time :
 						(!info?.begin
 							? "For a long time"
-							: `${info?.begin} – ${info?.end ? info?.end : "Present"}`)
+							: <><time>{info?.begin}</time> – {info?.end ? <time>{info?.end}</time> : "Present"}</>)
 				}</div>
-				<h3 class="mb-0 text-white">{name}</h3>
+				<h3 class="mb-0">{name}</h3>
 				{info?.url &&
 					<div class="text-sm mb-1"><a href={info?.url} target="_blank">{info?.url}</a></div>
 				}
@@ -51,17 +51,17 @@ const reservedKeys = ["description", "begin", "end", "time", "url", "abstract"]
 						.map(([k, v]: [string, any]) => (
 							<div class="indent-[2em_hanging]">
 								{k.endsWith("URL") && v
-									? <span>
+									? <>
 										<b>{k.replace("URL", "").trimEnd()}:</b>
 										<a href={v} target="_blank">{v}</a>
-									</span>
+									</>
 									: <b>{k}:</b> <span set:html={marked.parseInline(v)} />
 								}
 							</div>
 						))
 				}
 				{info?.abstract &&
-					<details><summary class="cursor-pointer"><b>Abstract</b></summary><div class="pl-[2em] text-sm" set:html={marked.parseInline(info?.abstract)} /></details>
+					<details><summary class="cursor-pointer"><b>Abstract</b></summary><div class="pl-[2em] text-sm font-serif text-justify" set:html={marked.parseInline(info?.abstract)} /></details>
 				}
 			</Card>
 		)) : <i>No information available.</i>
