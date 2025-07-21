@@ -4,7 +4,7 @@ description: Workaround to purge or rebuild an EFI partition.
 date: 2025-03-15
 ---
 
-For some reason, I'm recently migrating my entire OS to Linux. However, at the same time, I still hope to have Windows installed alongside it. The problem I realised is that installing Windows after Linux would make the EFI partition cleared (and I don't feel like manually doing these things inside Linux). I also found that the one in my computer is already messy with all leftovers by previous dual-system installations. Therefore, here is a tutorial for rebuilding the partition.
+For some reason, I'm recently migrating my entire OS to Linux. However, at the same time, I still hope to have Windows installed alongside it. The problem I realised is that installing Windows after Linux would wipe the EFI partition (and I don't feel like manually re-configuring these things inside Linux). I also found that the partition in my computer is already messy with all leftovers by previous dual-system installations. Therefore, here is a tutorial for rebuilding the partition.
 
 The first step is to get the [Media Creation Tool](https://www.microsoft.com/en-us/software-download/windows11). Using the tool and an external USB drive, make a regular Windows installation drive. Then, use any possible method to remove the EFI partition. This could be done within any Live CD or the Windows installation drive.
 
@@ -46,7 +46,7 @@ exit
 ```
 
 If there already exists a Windows installation, then execute
-```cmd
+```bat
 bcdboot C:\Windows /s S: /f UEFI
 ```
 
