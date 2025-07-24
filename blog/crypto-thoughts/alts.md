@@ -7,7 +7,7 @@ category: cryptocurrency
 
 Recent data reveals a significant capital influx into the altcoin market, with its total capitalisation increasing by more than $200 billion in just two weeks. This growth is quantitatively similar to the surge in October--November 2021, which marked the peak of the last bull cycle.
 
-However, a significant difference exists between then and now. The 2021 period was characterised by widespread euphoria and exponential returns for many assets. Lots of the alts gained 5000% or even 10000%. In contrast, the current market sentiment remains subdued, with most altcoins posting relatively modest gains of 100-200% from their lows.
+However, a significant difference exists between then and now. The 2021 period was characterised by widespread euphoria and exponential returns for many assets. Lots of the alts gained 5000% or even 10000%. In contrast, the current market sentiment remains subdued, with most altcoins posting relatively modest gains of 100--200% from their lows.
 
 The primary reason for this discrepancy is the fundamental structure of the current market. The number of tokens in circulation has expanded dramatically compared to the previous cycle. Thousands of altcoins have been created.
 
