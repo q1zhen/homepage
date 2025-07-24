@@ -1,5 +1,6 @@
 ---
 layout: ../layouts/Base.astro
+title: About This Site
 ---
 
 # About This Site

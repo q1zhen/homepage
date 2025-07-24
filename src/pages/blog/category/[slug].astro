@@ -24,7 +24,7 @@ export async function getStaticPaths() {
 const { category, posts } = Astro.props;
 ---
 
-<Base>
+<Base title={"Blog Category: " + category.toUpperCase()} description="Here is where I create, break, and write about things.">
 	<div class="mt-2">
 		<a href="/blog">« Back to all web logs</a>
 	</div>
