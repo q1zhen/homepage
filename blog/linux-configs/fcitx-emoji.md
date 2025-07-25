@@ -7,7 +7,7 @@ category: linux-stuff
 
 In Fcitx5 input candidates, at least on my OS, the emoji glyphs are displayed as blank spaces. This is because unlike regular characters which are vector-based, modern colour emojis are often stored as embedded bitmap images inside the font file. The system might ignore the bitmaps and try to render the emojis as standard monochrome glyphs, therefore failing to render.
 
-The solution is simple. Just change the font config `/etc/fonts/local.conf` and ad the following lines to force the rendering system to use embedded colour bitmaps:
+The solution is simple. Just change the font config `/etc/fonts/local.conf` and add the following lines to force the rendering system to use embedded colour bitmaps:
 ```xml
 <?xml version='1.0'?>
 <!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
