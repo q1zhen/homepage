@@ -5,6 +5,9 @@ import { Content as IndexMD } from "../contents/index.md"
 import Card from "../components/Card.astro"
 import { marked } from "marked"
 import publicKey from "../contents/public_key.asc?raw"
+import BlogCard from "../components/BlogCard.astro"
+
+const blog = await getCollection("blog")
 
 const entries = await getCollection("index")
 const reservedKeys = ["description", "begin", "end", "time", "url", "abstract"]
@@ -25,43 +28,58 @@ const reservedKeys = ["description", "begin", "end", "time", "url", "abstract"]
 </details>
 
 <section class="mb-8">
-	<h2>Projects</h2>
-	<p><i>To be added.</i></p>
+	<h2>Latest Blogs</h2>
+	{blog.sort((a, b) =>
+			new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+		).slice(0, 2).map(post => (
+			<BlogCard post={post} />
+		))
+	}
+	<a href="/blog" class="clear" target="_self">
+		<Card>More Blogs »</Card>
+	</a>
 </section>
 
-<div class="mb-8" />
+<a name="cv" />
+<h2 class="text-4xl pt-4">Curriculum Vitae</h2>
+
 {entries?.map(category => (
 	<section class="not-last:mb-6">
 		<h2>{category.id}</h2>
 		{category.data ? Object.entries(category.data).map(([name, info]: [string, any]) => (
-			<Card>
-				<div class="font-sans text-sm font-bold text-stone-400">{
-					info?.time ? info?.time :
-						(!info?.begin
-							? "For a long time"
-							: <><time>{info?.begin}</time> – {info?.end ? <time>{info?.end}</time> : "Present"}</>)
-				}</div>
-				<h3 class="mb-0">{name}</h3>
-				{info?.url &&
-					<div class="text-sm mb-1"><a href={info?.url} target="_blank">{info?.url}</a></div>
-				}
-				{info?.description && <div set:html={marked.parseInline(info?.description)} />}
-				{info &&
-					Object.entries(info).filter(i => !reservedKeys.includes(i[0]))
-						.map(([k, v]: [string, any]) => (
-							<div class="indent-[2em_hanging]">
-								{k.endsWith("URL") && v
-									? <>
-										<b>{k.replace("URL", "").trimEnd()}:</b>
-										<a href={v} target="_blank">{v}</a>
-									</>
-									: <b>{k}:</b> <span set:html={marked.parseInline(v)} />
-								}
-							</div>
-						))
-				}
-				{info?.abstract &&
-					<details><summary class="cursor-pointer"><b>Abstract</b></summary><div class="pl-[2em] text-sm font-serif text-justify" set:html={marked.parseInline(info?.abstract)} /></details>
+			<Card class="flex flex-col gap-2">
+				<div>
+					<div class="font-sans text-sm font-bold text-stone-400">{
+						info?.time ? info?.time :
+							(!info?.begin
+								? "For a long time"
+								: <><time>{info?.begin}</time> – {info?.end ? <time>{info?.end}</time> : "Present"}</>)
+					}</div>
+					<h3 class="mb-0">{name}</h3>
+					{info?.url &&
+						<div class="text-sm"><a href={info?.url}>{info?.url}</a></div>
+					}
+				</div>
+				{info?.description && <div set:html={marked.parseInline(info?.description)} class="emp" />}
+				{(info && Object.entries(info).filter(i => !reservedKeys.includes(i[0])).length != 0) &&
+					<div>
+						{info && Object.entries(info).filter(i => !reservedKeys.includes(i[0]))
+							.map(([k, v]: [string, any]) => (
+								<div class="indent-[2em_hanging]">
+									{k.endsWith("URL") && v
+										? <>
+											<b>{k.replace("URL", "").trimEnd()}:</b>
+											<a href={v}>{v}</a>
+										</>
+										: <b>{k}:</b> <span set:html={marked.parseInline(v)} class="emp" />
+									}
+								</div>
+							))
+						}
+						{info?.abstract &&
+							<details><summary class="cursor-pointer"><b>Abstract</b></summary><div class="pl-[2em] text-sm font-serif text-justify" set:html={marked.parseInline(info?.abstract)} /></details>
+						}
+					</div>
 				}
 			</Card>
 		)) : <i>No information available.</i>

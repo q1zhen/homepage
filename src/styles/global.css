@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Chiron+Sung+HK:ital,wght@0,200..900;1,200..900&family=Figtree:ital,wght@0,300..900;1,300..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Noto+Serif+KR:wght@200..900&family=Noto+Serif+SC:wght@200..900&display=swap');
 @import "tailwindcss";
 
 @theme {
-	--font-sans: "Figtree", "Noto Sans", "Chiron Sung HK", ui-sans-serif, system-ui, sans-serif;
-	--font-serif: "Newsreader", "Noto Serif", "Georgia", "Chiron Sung HK", "Noto Serif CJK HK", "Noto Serif HK", ui-serif, serif;
+	--font-cjk: "Noto Serif KR", "Noto Serif SC";
+	--font-sans: "Figtree", var(--font-cjk), ui-sans-serif, system-ui, sans-serif;
+	--font-serif: "Newsreader", var(--font-cjk), "Noto Serif", "Georgia", ui-serif, serif;
 	--font-mono: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 	--color-primary: #D6BD98;
 	--color-secondary: #0c1d1d;
@@ -13,7 +14,7 @@
 
 @layer base {
 	html {
-		@apply font-medium font-sans bg-secondary text-stone-200 hyphens-auto text-justify;
+		@apply font-[450] font-sans bg-secondary text-stone-200 hyphens-auto text-justify scroll-smooth;
 	}
 	dfn {
 		all: unset;
@@ -57,5 +58,9 @@
 	}
 	article {
 		@apply font-serif text-lg;
+	}
+
+	.emp b, .emp strong {
+		@apply text-amber-100;
 	}
 }

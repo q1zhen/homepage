@@ -10,7 +10,7 @@ interface Props {
 const { post } = Astro.props;
 ---
 
-<a href={"/blog/post/" + post.id} class="clear">
+<a href={"/blog/post/" + post.id} target="_self" class="clear">
 	<Card>
 		<h3 class="mb-0">{post.data.title}</h3>
 		<div class="text-sm mt-0.5 mb-2 font-bold text-stone-400">

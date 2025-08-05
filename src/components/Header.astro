@@ -2,8 +2,7 @@
 const nav = [
 	{ title: "Home", href: "/" },
 	{ title: "Blog", href: "/blog" },
-	{ title: "Projects & Tools", href: "/projects" },
-	{ title: "Curriculum Vitae", href: "/cv" },
+	{ title: "CV", href: "/#cv" },
 	{ title: "About", href: "/about" },
 ]
 
@@ -22,17 +21,18 @@ function selectedNav(url) {
 		{nav.map((item) => (
 			<a
 				href={item.href}
+				target="_self"
 				class:list={[
 					selectedNav(item.href)
 						? "text-primary"
 						: "text-secondary-dimmer",
-					"hover:text-primary transition-all ease-out duration-300 xl:block border-none font-sans font-bold group"
+					"hover:text-primary active:text-primary transition-all ease-out duration-300 xl:block border-none font-sans font-bold group"
 				]}
 			>
 				<span class:list={[
 					selectedNav(item.href)
 						? "opacity-100"
-						: "group-hover:opacity-50 opacity-0",
+						: "group-hover:opacity-50 group-active:opacity-50 opacity-0",
 					"transition-all ease-out duration-300 w-2 h-2 bg-red-600 mr-1 inline-block"
 				]} />
 				{item.title}

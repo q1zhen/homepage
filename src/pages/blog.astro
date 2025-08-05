@@ -26,7 +26,7 @@ const categories = [...new Set(blog.map((post) => post.data.category))]
 		{categories.sort(((a, b) => a > b ? 1 : -1))
 		.map((cat, i) => (
 			<>
-				<a class="uppercase" href={"/blog/category/" + cat}>{cat}</a>{i < categories.length - 1 && ", "}
+				<a class="uppercase" href={"/blog/category/" + cat} target="_self">{cat}</a>{i < categories.length - 1 && ", "}
 			</>
 		))}.
 	</p>
