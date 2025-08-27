@@ -14,13 +14,14 @@ Education:
 Research and Publications:
   "ShUD: the First Shanghainese Universal Dependency Treebank":
     begin: January 2025
-    description: Treebank included in the [Universal Dependencies project](https://universaldependencies.org/#:~:text=Shanghainese); Accepted paper in [UD Workshop 2025](https://universaldependencies.org/udw25/) (part of [SyntaxFest 2025](https://syntaxfest.github.io/syntaxfest25/) in Ljubljana, 26&ndash;29 August 2025)
+    description: "[**Read Paper »**](https://aclanthology.org/2025.udw-1.20.pdf) <br/> Treebank included in the [Universal Dependencies project](https://universaldependencies.org/#:~:text=Shanghainese); Accepted paper in [UD Workshop 2025](https://universaldependencies.org/udw25/) (part of [SyntaxFest 2025](https://syntaxfest.github.io/syntaxfest25/), an ACL-affiliated conference, in Ljubljana, 26&ndash;29 August 2025)"
+    url: https://aclanthology.org/2025.udw-1.20/
     abstract: This paper introduces [**ShUD**](https://github.com/UniversalDependencies/UD_Shanghainese-ShUD), the first Universal Dependencies (UD) treebank for Shanghainese, a Wu Chinese variant spoken by approximately 14 million people but severely under-resourced in NLP. The treebank is built through a scalable annotation pipeline that exploits grammatical parallels between Shanghainese and Mandarin. Our pipeline also provides a practical strategy for bootstrapping resources for other Chinese dialects. We documented syntactic phenomena unique to Shanghainese within the UD framework and fine-tuned a [dependency parser](https://huggingface.co/q1zhen/ShUD) using our annotated treebank, contributing a foundation to both NLP tool development and cross-linguistic syntactic research.
     Treebank URL: https://github.com/UniversalDependencies/UD_Shanghainese-ShUD
     Model URL: https://huggingface.co/q1zhen/ShUD
 
 Awards and Honours:
-  National Science Talent Programme (英才計劃; also the ISEF China Qualifier):
+  National Science Talent Programme (英才计划; also the ISEF China Qualifier):
     begin: January 2024
     end: December 2024
     description: Computer Science Track; Outstanding student; **Selected representative (9 out of 1,800+ nationwide)** to present on the national exchange conference
