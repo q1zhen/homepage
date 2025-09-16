@@ -17,4 +17,5 @@ In the past, ETH-beta always over-performed ETH. We are not seeing this in the c
 
 The continued capital influx would certainly continue to drive the price up, but I doubt if we'll still see an altseason, with crazy parabolic growths on a vast range of altcoins, as we did four years ago.
 
-Stay curious and cautious!
+Until next time.
+
