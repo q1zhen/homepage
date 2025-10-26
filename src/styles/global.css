@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Noto+Serif+KR:wght@200..900&family=Noto+Serif+SC:wght@200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Serif+KR:wght@200..900&family=Noto+Serif+SC:wght@200..900&display=swap');
 @import "tailwindcss";
 
 @theme {
 	--font-cjk: "Noto Serif KR", "Noto Serif SC";
-	--font-sans: "Barlow", "Figtree", var(--font-cjk), ui-sans-serif, system-ui, sans-serif;
-	--font-serif: "Zilla Slab", "Newsreader", var(--font-cjk), "Noto Serif", "Georgia", ui-serif, serif;
+	--font-sans: "Hanken Grotesk", var(--font-cjk), ui-sans-serif, system-ui, sans-serif;
+	--font-serif: "Zilla Slab", var(--font-cjk), "Noto Serif", "Georgia", ui-serif, serif;
 	--font-mono: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 	--color-primary: #D6BD98;
 	--color-secondary: #0c1d1d;
@@ -15,7 +14,7 @@
 
 @layer base {
 	html {
-		@apply font-[450] font-serif bg-secondary text-stone-200 hyphens-auto text-justify scroll-smooth;
+		@apply font-[450] font-sans lining-nums bg-secondary text-stone-200 hyphens-auto text-justify scroll-smooth;
 	}
 	dfn {
 		all: unset;
@@ -27,8 +26,8 @@
 	.Card :is(h1, h2, h3, h4, h5, h6) {
 		@apply text-white;
 	}
-	h1 { @apply text-6xl mb-8 uppercase; }
-	h2 { @apply text-3xl uppercase; }
+	h1 { @apply text-6xl mb-8; }
+	h2 { @apply text-3xl; }
 	h3 { @apply text-xl; }
 	p:not(:last-child):not(:has(+ pre)) {
 		@apply mb-4;
@@ -49,7 +48,7 @@
 		@apply text-sm;
 	}
 	pre {
-		@apply border border-secondary-dim p-2 rounded-md mt-2 mb-4 w-full box-border  overflow-x-auto text-sm !bg-transparent;
+		@apply border border-secondary-dim p-2 rounded-md mt-2 mb-4 w-full box-border overflow-x-auto text-sm !bg-transparent;
 	}
 	code:not(pre code) {
 		@apply text-emerald-100 px-0.5;
@@ -60,6 +59,20 @@
 	article {
 		@apply font-serif text-lg;
 	}
+	summary {
+		@apply list-none;
+	}
+	summary::after {
+		content: "[expand]";
+		@apply text-sm ml-2 text-stone-400 duration-300 ease-out;
+	}
+	summary:hover::after {
+		@apply text-primary duration-300 ease-out;
+	}
+	details[open] > summary::after {
+		content: "[collapse]";
+	}
+
 
 	.emp b, .emp strong {
 		@apply text-amber-100;
