@@ -15,7 +15,7 @@ const reservedKeys = ["description", "begin", "end", "time", "url", "abstract"]
 
 <Base>
 
-<h1>Hi!</h1>
+<h1 class="capitalize">Hi!</h1>
 
 <IndexMD />
 
@@ -41,7 +41,7 @@ const reservedKeys = ["description", "begin", "end", "time", "url", "abstract"]
 </section>
 
 <a name="cv" />
-<h2 class="text-4xl pt-4">Curriculum Vitae</h2>
+<h2 class="text-5xl pt-4">Curriculum Vitae</h2>
 
 {entries?.map(category => (
 	<section class="not-last:mb-6">
@@ -60,7 +60,7 @@ const reservedKeys = ["description", "begin", "end", "time", "url", "abstract"]
 						<div class="text-sm"><a href={info?.url}>{info?.url}</a></div>
 					}
 				</div>
-				{info?.description && <div set:html={marked.parseInline(info?.description)} class="emp" />}
+				{info?.description && <div set:html={marked.parseInline(info?.description)} class="emp font-sans" />}
 				{(info && Object.entries(info).filter(i => !reservedKeys.includes(i[0])).length != 0) &&
 					<div>
 						{info && Object.entries(info).filter(i => !reservedKeys.includes(i[0]))
@@ -68,10 +68,10 @@ const reservedKeys = ["description", "begin", "end", "time", "url", "abstract"]
 								<div class="indent-[2em_hanging]">
 									{k.endsWith("URL") && v
 										? <>
-											<b>{k.replace("URL", "").trimEnd()}:</b>
+											<b class="font-sans">{k.replace("URL", "").trimEnd()}:</b>
 											<a href={v}>{v}</a>
 										</>
-										: <b>{k}:</b> <span set:html={marked.parseInline(v)} class="emp" />
+										: <b class="font-sans">{k}:</b> <span set:html={marked.parseInline(v)} class="emp" />
 									}
 								</div>
 							))

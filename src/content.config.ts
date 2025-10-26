@@ -17,7 +17,9 @@ export const collections = {
 			title: z.string(),
 			description: z.string(),
 			date: z.date(),
-			category: z.string().default("miscellaneous")
-		})
+			category: z.string().default("miscellaneous"),
+			lang: z.string().default("en"),
+			draft: z.boolean().default(false),
+		}),
 	})
 }

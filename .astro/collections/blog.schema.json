@@ -30,6 +30,14 @@
           "type": "string",
           "default": "miscellaneous"
         },
+        "lang": {
+          "type": "string",
+          "default": "en"
+        },
+        "draft": {
+          "type": "boolean",
+          "default": false
+        },
         "$schema": {
           "type": "string"
         }

@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import tailwindcss from "@tailwindcss/vite";
+import smartypants from "remark-smartypants";
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,5 +11,13 @@ export default defineConfig({
 	redirects: {
 		"/blog/post": "/blog",
 		"/blog/category": "/blog",
-	}
+	},
+	markdown: {
+		smartypants: false,
+		remarkPlugins: [
+			[
+				smartypants, { dashes: 'oldschool' }
+			],
+		],
+	},
 });

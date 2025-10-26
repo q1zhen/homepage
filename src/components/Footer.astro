@@ -9,7 +9,7 @@ const contacts = [
 const lastModified = execSync(`git log -1 --pretty="format:%cI"`);
 ---
 
-<div>
+<div class="font-sans">
 	<p>
 		This site is open-source on <a href="https://github.com/q1zhen/homepage">GitHub</a>.<br/>
 		Last modified at <time datetime={lastModified}>{dayjs(lastModified).format("D MMMM YYYY")}</time>.
