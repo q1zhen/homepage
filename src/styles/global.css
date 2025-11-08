@@ -21,7 +21,7 @@
 		@apply border-dotted border-0 border-b-2 cursor-help;
 	}
 	h1, h2, h3, h4, h5, h6 {
-		@apply font-sans font-bold text-primary mb-4 text-left;
+		@apply font-sans font-extrabold text-primary mb-4 text-left;
 	}
 	.Card :is(h1, h2, h3, h4, h5, h6) {
 		@apply text-white;
@@ -29,8 +29,14 @@
 	h1 { @apply text-6xl mb-8; }
 	h2 { @apply text-3xl; }
 	h3 { @apply text-xl; }
-	p:not(:last-child):not(:has(+ pre)) {
+	:is(p, ul, ol):not(:last-child):not(:has(+ pre, + ul, + ol)) {
 		@apply mb-4;
+	}
+	li {
+		@apply list-disc list-inside pl-4;
+	}
+	li li {
+		@apply pl-8;
 	}
 	b, strong {
 		@apply text-white;

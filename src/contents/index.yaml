@@ -2,10 +2,6 @@ Education:
   Shanghai World Foreign Language Academy (IB Diploma Programme):
     begin: September 2023
     url: https://www.wflms.cn/
-  Engineering Summer Academy at Penn (ESAP):
-    time: July 2024
-    url: https://esap.seas.upenn.edu/
-    Course: Complex Networks (**GPA 4.0**)
   Shanghai World Foreign Language Academy (National Curriculum):
     begin: September 2019
     end: June 2023
@@ -16,51 +12,6 @@ Research and Publications:
     begin: January 2025
     description: "[**Read Paper »**](https://aclanthology.org/2025.udw-1.20.pdf) <br/> Treebank included in the [Universal Dependencies project](https://universaldependencies.org/#:~:text=Shanghainese); Accepted paper in [UD Workshop 2025](https://universaldependencies.org/udw25/) (part of [SyntaxFest 2025](https://syntaxfest.github.io/syntaxfest25/), an ACL-affiliated conference, in Ljubljana, 26&ndash;29 August 2025)"
     url: https://aclanthology.org/2025.udw-1.20/
-    abstract: This paper introduces [**ShUD**](https://github.com/UniversalDependencies/UD_Shanghainese-ShUD), the first Universal Dependencies (UD) treebank for Shanghainese, a Wu Chinese variant spoken by approximately 14 million people but severely under-resourced in NLP. The treebank is built through a scalable annotation pipeline that exploits grammatical parallels between Shanghainese and Mandarin. Our pipeline also provides a practical strategy for bootstrapping resources for other Chinese dialects. We documented syntactic phenomena unique to Shanghainese within the UD framework and fine-tuned a [dependency parser](https://huggingface.co/q1zhen/ShUD) using our annotated treebank, contributing a foundation to both NLP tool development and cross-linguistic syntactic research.
+    abstract: This paper introduces [**ShUD**](https://github.com/UniversalDependencies/UD_Shanghainese-ShUD), the first Universal Dependencies (UD) treebank for Shanghainese, a Wu Chinese variant spoken by approximately 14 million people but severely under-resourced in NLP. The treebank is built through a scalable annotation pipeline that exploits grammatical parallels between Shanghainese and Mandarin. Our pipeline also provides a practical strategy for bootstrapping resources for other Chinese dialects. We documented syntactic phenomena unique to Shanghainese within the UD framework and fine-tuned a dependency parser using our annotated treebank, contributing a foundation to both NLP tool development and cross-linguistic syntactic research.
     Treebank URL: https://github.com/UniversalDependencies/UD_Shanghainese-ShUD
     Model URL: https://huggingface.co/q1zhen/ShUD
-
-Awards and Honours:
-  National Science Talent Programme (英才计划; also the ISEF China Qualifier):
-    begin: January 2024
-    end: December 2024
-    description: Computer Science Track; Outstanding student; **Selected representative (9 out of 1,800+ nationwide)** to present on the national exchange conference
-    "N.B.": "*While the programme used to be an affiliated fair for ISEF until 2024, the timing meant I was ineligible to compete for qualification to the ISEF finals.*"
-  The High School Mathematical Contest in Modeling (HiMCM):
-    time: 2024
-    description: "**Finalist (Global 5%)** from 1,055 teams"
-  USA Computing Olympiad:
-    description: "**Gold Devision**"
-  International Linguistics Olympiad (China Final):
-    time: 2025
-    description: "**c. Top 10%** in Senior Level"
-    First Round: Individual Distinction & Team Distinction
-    Boot Camp: Individual Merit & Team Merit
-  American Mathematics Competition 12:
-    time: 2024
-    description: "**Distinction (Global 5%)**; Qualifying AIME"
-
-School Club Activities:
-  Computerization:
-    begin: September 2023
-    url: https://computerization.io
-    description: The computer club of my school.
-    GitHub URL: https://github.com/Computerization
-    Role: "**President** in Year 2024&ndash;25"
-  CS Clubs:
-    begin: August 2024
-    url: https://csclubs.org
-    description: An international coalition of high school computer science clubs.
-    Role: "**Initiator** (in behalf of Computerization)"
-  AI Lab:
-    begin: September 2025
-    description: A newly-founded academic-oriented club in AI and related technologies.
-    Role: "**Co-founder**"
-  Disko Elysium:
-    begin: September 2023
-    Role: "**President** in Year 2024&ndash;25"
-    description: The ultimate frisbee club of school. In 2025, we won a **Five-Star Club Award**, the highest club award.
-  Bookwai Baboons:
-    begin: September 2024
-    description: The newly-founded ultimate frisbee varsity.
-    Role: "**Captain** in Year 2024&ndash;25; **Co-founder**"
