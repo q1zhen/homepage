@@ -2,6 +2,7 @@
 title: Linux on Apple Silicon
 description: Just got a M2 Macbook Air and installed Fedora Asahi Remix on it.
 date: 2025-11-08
+category: linux-stuff
 ---
 
 I have been using Linux as a daily driver for quite a while. A major problem is that despite that Linux is typically considered to be lighter, it actually has worse power consumption. Even with utilities like TLP, it is not very ideal.
