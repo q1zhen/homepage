@@ -54,17 +54,43 @@ The camera notch is about 60px high. With the extension, the panel height can al
 
 ### Fractional scaling and Wayland
 
-It is not very satisfactory to use X11 apps under Wayland with fractional scaling. It makes apps blurry. For electron apps, add this to `/etc/environment` to let them prefer using Wayland:
-```sh
-ELECTRON_OZONE_PLATFORM_HINT=auto
-```
+It is not very satisfactory to use X11 apps under Wayland with fractional scaling. It makes apps blurry.
 
 GNOME now comes with an experimental feature that allows native scaling in XWayland that can be enabled using:
 
 ```sh
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer', 'xwayland-native-scaling']"
 ```
-*N.B., `scale-monitor-framebuffer` must be turned on, or the scaling settings would not persist across boots.*
+
+N.B., `scale-monitor-framebuffer` must be turned on, or the scaling settings would not persist across boots.
+
+### Installing additional codecs
+
+With the default free codecs, the experience of video playing is not good (lag and heat). Fedora offers [RPM Fusion](https://rpmfusion.org) to install these non-free software packages. First enable RPM Fusion:
+```sh
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+```
+Confirm they are enabled with
+```sh
+dnf repolist | grep rpmfusion
+```
+
+Install the multimedia codec group:
+```sh
+sudo dnf group install multimedia
+```
+
+Fedora ships `ffmpeg-free`, which avoids some patented codecs. RPM Fusion provides a full build:
+```sh
+sudo dnf swap ffmpeg-free ffmpeg --allowerasing
+```
+
+Then to update it, run
+```sh
+sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+```
+
+Finally reboot.
 
 ### Volume and microphone
 
