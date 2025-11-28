@@ -1,12 +1,3 @@
-Education:
-  Shanghai World Foreign Language Academy (IB Diploma Programme):
-    begin: September 2023
-    url: https://www.wflms.cn/
-  Shanghai World Foreign Language Academy (National Curriculum):
-    begin: September 2019
-    end: June 2023
-    url: https://www.wflms.cn/
-
 Research and Publications:
   "ShUD: the First Shanghainese Universal Dependency Treebank":
     begin: January 2025
@@ -14,4 +5,12 @@ Research and Publications:
     url: https://aclanthology.org/2025.udw-1.20/
     abstract: This paper introduces [**ShUD**](https://github.com/UniversalDependencies/UD_Shanghainese-ShUD), the first Universal Dependencies (UD) treebank for Shanghainese, a Wu Chinese variant spoken by approximately 14 million people but severely under-resourced in NLP. The treebank is built through a scalable annotation pipeline that exploits grammatical parallels between Shanghainese and Mandarin. Our pipeline also provides a practical strategy for bootstrapping resources for other Chinese dialects. We documented syntactic phenomena unique to Shanghainese within the UD framework and fine-tuned a dependency parser using our annotated treebank, contributing a foundation to both NLP tool development and cross-linguistic syntactic research.
     Treebank URL: https://github.com/UniversalDependencies/UD_Shanghainese-ShUD
-    Model URL: https://huggingface.co/q1zhen/ShUD
+
+# Education:
+#   Shanghai World Foreign Language Academy (IB Diploma Programme):
+#     begin: September 2023
+#     url: https://www.wflms.cn/
+#   Shanghai World Foreign Language Academy (National Curriculum):
+#     begin: September 2019
+#     end: June 2023
+#     url: https://www.wflms.cn/
