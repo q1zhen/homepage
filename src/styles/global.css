@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cactus+Classical+Serif&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Cactus+Classical+Serif&family=TikTok+Sans:opsz,wght@12..36,300..900&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "tailwindcss";
 
 @theme {
 	--font-cjk: "Cactus Classical Serif", "Noto Serif CJK KR", "Noto Serif KR", "Noto Serif CJK SC", "Noto Serif SC";
-	--font-sans: "TikTok Sans", "Hanken Grotesk", var(--font-cjk), ui-sans-serif, system-ui, sans-serif;
-	--font-serif: "Zilla Slab", var(--font-cjk), "Noto Serif", "Georgia", ui-serif, serif;
+	--font-sans: "TikTok Sans", var(--font-cjk), ui-sans-serif, system-ui, sans-serif;
+	--font-serif: "Tinos", "Liberation Serif", "Times New Roman", var(--font-cjk), "Noto Serif", "Georgia", ui-serif, serif;
 	--font-mono: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 	--color-primary: #D6BD98;
 	--color-secondary: #0c1d1d;
@@ -14,21 +14,21 @@
 
 @layer base {
 	html {
-		@apply font-[450] font-sans lining-nums bg-secondary text-stone-200 hyphens-auto text-justify scroll-smooth;
+		@apply font-[400] font-sans lining-nums bg-secondary text-stone-200 hyphens-auto text-justify scroll-smooth;
 	}
 	dfn {
 		all: unset;
 		@apply border-dotted border-0 border-b-2 cursor-help;
 	}
 	h1, h2, h3, h4, h5, h6 {
-		@apply font-sans font-bold text-primary mb-4 text-left;
+		@apply font-serif font-bold text-primary mb-4 text-left;
 	}
 	.Card :is(h1, h2, h3, h4, h5, h6) {
 		@apply text-white;
 	}
-	h1 { @apply text-6xl mb-8; }
+	h1 { @apply text-6xl mb-8 font-sans; }
 	h2 { @apply text-3xl; }
-	h3 { @apply text-xl; }
+	h3 { @apply text-2xl; }
 	:is(p, ul, ol):not(:last-child):not(:has(+ pre, + ul, + ol)) {
 		@apply mb-4;
 	}
