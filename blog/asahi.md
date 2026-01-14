@@ -9,7 +9,7 @@ I have been using Linux as a daily driver for quite a while. A major problem is 
 
 For years, MacBooks have been famous for their extraordinary battery life, especially after the release of Apple Silicon (M-series chips) in ARM architecture. [Asahi Linux](https://asahilinux.org/) is a project that brings Linux to Apple Silicon Macs. Plus, it is also the setup Linus Torvalds uses.
 
-This is why I bought an M2 MacBook Air in 2025. I got a 24+512GB one at a pretty fair price of about RMB6,000. M2 still has around 80% of M4's performance, so it would be very sufficient for daily use.
+This is why I bought an M2 MacBook Air in 2025. I got a 24+512GB one at a pretty fair price of about RMB6,000. M2 still has around 70% of M4's performance, so it would be very sufficient for daily use.
 
 Asahi Linux officially co-operates with Fedora and releases Fedora Asahi Remix as an officially-polished, flagship distro with a maximal support for drivers and stability. This is also the version I installed.
 

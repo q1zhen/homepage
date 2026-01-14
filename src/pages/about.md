@@ -3,30 +3,33 @@ layout: ../layouts/Base.astro
 title: About This Site
 ---
 
-# About This Site
+# About This Site 关于此网站
 
-<time class="text-stone-400">July 2025</time>
+<time class="text-stone-400">January 2026</time>
 
+<article class="my-8">
+
+*Welcome back.*
+
+My journey with this website started back in middle school with attempts to build everything from scratch using vanilla HTML and 2000s technologies. After years of struggling with Hexo and Jekyll templates, recently (not so recently though `:o`), I found [Astro](https://astro.build/). That's the time I realised that I was shipping *bloat* all the time.
+
+So I tore the website down and started again.
+
+Today what you are looking at is a pure approach. I kept Astro for its powerful content management but tried to make the frontend down to the essentials. On colour palette: it is heavily inspired by Starbucks (my favourite combination). I tried to make it finally lightweight and fast.
+
+It took a few refactors to get here. Thanks for following along.
+
+</article>
 <article>
 
-Welcome back. If you're a returning visitor, you've probably noticed that things look a little different around here. Yes, there was yet another refactor of this site. This has become something of a tradition.
+欢迎回来。
 
-This site is built using [Astro](https://astro.build/) and hosted on [Cloudflare](https://www.cloudflare.com/).
+折腾这个网站起源于初中时期了。那时候我完全尝试用 vanilla HTML 和一些古早的技术从零开始搭所有的东西。后来我又折腾了很久 Hexo 和 Jekyll 模板，不过一直没找到合适的解决方案。后来我找到了 [Astro](https://astro.build/) 这个框架，比较后才发现之前用模板做出来的东西都完全是 bloated。
 
-My journey with this website has been a long series of experiments. It started back in middle school with attempts to build everything from scratch using vanilla HTML and 2000s technologies. The results were often clunky. Maintaining it and adding new content was a constant struggle.
+所以我又推倒重来了整个网站。
 
-Later, I moved on to blog frameworks like Jekyll and Hexo. They were fantastic at first, allowing me to create beautiful pages quickly using community templates. However, I soon felt constrained. Customising themes to fit my specific vision required digging through unfamiliar code, and I lacked the time to build a theme from the ground up. Those attempts were also eventually abandoned.
+现在这个版本是尽可能精简的尝试。我保留了 Astro 进行内容管理，但在前端上尝试只保留最核心的元素并且不用很多乱七八糟的第三方库。配色方案是我最喜欢的类似星巴克的颜色组合。
 
-More recently, I discovered the Astro framework. I chose a template, customised it, and was initially pleased with the modern feel and the ease of its built-in support of using Markdown for content. It was a significant step-up, a "web framework for content-driven websites" that let me get things running in a couple of hours.
-
-However, I soon realised my site had become bloated. Inspired by [a friend's purist approach to web development](https://kekkan.org/RsML/ns.xml) using XSLT, I inspected my own and found it laden with unused frameworks and large dependencies referenced by a single component, like an entire Font Awesome library just for one icon. It felt wrong.
-
-That brings us to today. I've refactored again, but this time with a clearer philosophy. I've kept Astro for its powerful static site generation but stripped away the heavy template. My goal was to produce a lightweight, near-vanilla HTML output with a custom, minimal stylesheet. No bloated, third-party CSS or JavaScript libraries.
-
-The colour palette is heavily inspired by Starbucks. It's my favourite combination that I've been using for a long time. With small adjustments it fits well on screen. Fonts are hosted on Google Fonts, where glyphs are loaded on-demand. I used Tailwind CSS, but still, the utility classes are included only if used. 
-
-The result is a website that I'm truly satisfied with: it's incredibly lightweight, with most pages under 150kB, yet it looks and feels modern. It’s the culmination of all the past attempts.
-
-Thanks for joining me on this journey. Enjoy the new site!
+历经了很多次重构才走到今天这一步。感谢你的关注与陪伴。
 
 </article>

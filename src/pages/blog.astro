@@ -19,10 +19,10 @@ const categories = [...new Set(blog.map((post) => post.data.category))]
 ---
 
 <Base title="Blog" description="Here is where I create, break, and write about things.">
-	<h1>My Web Logs</h1>
+	<h1>My Web Logs 我的博客</h1>
 	<p class="mt-8">Here is where I create, break, and write about things.</p>
 	<p class="mb-12">
-		Browse by category:
+		Browse by category 按类别:
 		{categories.sort(((a, b) => a > b ? 1 : -1))
 		.map((cat, i) => (
 			<>

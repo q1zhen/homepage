@@ -15,7 +15,7 @@ const reservedKeys = ["description", "begin", "end", "time", "url", "abstract"]
 
 <Base>
 
-<h1 class="capitalize">Hi!</h1>
+<h1 class="capitalize">Hi! 欢迎!</h1>
 
 <IndexMD />
 
@@ -28,7 +28,7 @@ const reservedKeys = ["description", "begin", "end", "time", "url", "abstract"]
 </details>
 
 <section class="mb-8">
-	<h2>Latest Blogs</h2>
+	<h2>Latest Blogs 最新博客文章</h2>
 	{blog.sort((a, b) =>
 			new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 		).slice(0, 2).map(post => (
@@ -36,7 +36,7 @@ const reservedKeys = ["description", "begin", "end", "time", "url", "abstract"]
 		))
 	}
 	<a href="/blog" class="clear" target="_self">
-		<Card>More Blogs »</Card>
+		<Card>More Blogs 更多 »</Card>
 	</a>
 </section>
 

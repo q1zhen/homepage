@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Cactus+Classical+Serif&family=TikTok+Sans:opsz,wght@12..36,300..900&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Cactus+Classical+Serif&family=Chocolate+Classical+Sans&family=TikTok+Sans:opsz,wght@12..36,300..900&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "tailwindcss";
 
 @theme {
-	--font-cjk: "Cactus Classical Serif", "Noto Serif CJK KR", "Noto Serif KR", "Noto Serif CJK SC", "Noto Serif SC";
-	--font-sans: "TikTok Sans", var(--font-cjk), ui-sans-serif, system-ui, sans-serif;
-	--font-serif: "Tinos", "Liberation Serif", "Times New Roman", var(--font-cjk), "Noto Serif", "Georgia", ui-serif, serif;
+	--font-cjk-serif: "Cactus Classical Serif", "Noto Serif CJK KR", "Noto Serif KR", "Noto Serif CJK SC", "Noto Serif SC";
+	--font-cjk-sans: "Chocolate Classical Sans", "Noto Sans CJK KR", "Noto Sans KR", "Noto Sans CJK SC", "Noto Sans SC";
+	--font-sans: "TikTok Sans", var(--font-cjk-sans), ui-sans-serif, system-ui, sans-serif;
+	--font-serif: "Tinos", "Liberation Serif", "Times New Roman", var(--font-cjk-serif), "Noto Serif", "Georgia", ui-serif, serif;
 	--font-mono: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 	--color-primary: #D6BD98;
 	--color-secondary: #0c1d1d;
@@ -69,14 +70,14 @@
 		@apply list-none cursor-pointer;
 	}
 	summary::after {
-		content: "[expand]";
+		content: "[Expand 展开]";
 		@apply text-sm ml-2 text-stone-400 duration-300 ease-out;
 	}
 	summary:hover::after {
 		@apply text-primary duration-300 ease-out;
 	}
 	details[open] > summary::after {
-		content: "[collapse]";
+		content: "[Collapse 收起]";
 	}
 
 

@@ -26,10 +26,10 @@ const { category, posts } = Astro.props;
 
 <Base title={"Blog Category: " + category.toUpperCase()} description="Here is where I create, break, and write about things.">
 	<div class="mt-2">
-		<a href="/blog" target="_self">« Back to all web logs</a>
+		<a href="/blog" target="_self">« Back to all web logs 回到全部博客</a>
 	</div>
 	<h1 class="mt-4 mb-16">
-		Category: <br/>
+		Category 分类: <br/>
 		<span class="uppercase">{category}</span>
 	</h1>
 	{posts.sort((a, b) =>
