@@ -25,7 +25,7 @@ const language_map = {
 		<a href="/blog" target="_self">« Back to all web logs</a>
 	</div>
 	<h1 class="mt-4">{entry.data.title}</h1>
-	<div class="mb-8 text-stone-400">
+	<div class="mb-8 text-text/60">
 		<time>{dayjs(entry.data.date).format("D MMMM YYYY")}</time>
 		&CenterDot;
 		<a class="uppercase" href={"/blog/category/" + entry.data.category} target="_self">{entry.data.category}</a>

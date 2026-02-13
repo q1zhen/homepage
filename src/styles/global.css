@@ -1,33 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Cactus+Classical+Serif&family=TikTok+Sans:opsz,wght@12..36,300..900&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Cactus+Classical+Serif&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "tailwindcss";
+
+@font-face {
+	font-family: "Go";
+	src: url("/fonts/Go-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Go";
+	src: url("/fonts/Go-Bold.ttf") format("truetype");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Go";
+	src: url("/fonts/Go-Italic.ttf") format("truetype");
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Go";
+	src: url("/fonts/Go-Bold-Italic.ttf") format("truetype");
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
+}
 
 @theme {
 	--font-cjk: "Cactus Classical Serif", "Noto Serif CJK KR", "Noto Serif KR", "Noto Serif CJK SC", "Noto Serif SC";
-	--font-sans: "TikTok Sans", var(--font-cjk), ui-sans-serif, system-ui, sans-serif;
+	--font-sans: "Go", "Lato", "Carlito", "Calibri", var(--font-cjk), ui-sans-serif, system-ui, sans-serif;
 	--font-serif: "Tinos", "Liberation Serif", "Times New Roman", var(--font-cjk), "Noto Serif", "Georgia", ui-serif, serif;
 	--font-mono: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-	--color-primary: #D6BD98;
-	--color-secondary: #0c1d1d;
-	--color-secondary-dim: #40534C;
-	--color-secondary-dimmer: #677D6A;
+	/* Base palette */
+	--color-beige: #D6BD98;
+	--color-beige-light: #F5EDE0;
+	--color-teal-dark: #0c1d1d;
+	--color-teal: #40534C;
+	--color-teal-light: #677D6A;
+	/* Theme colors (dark mode default) */
+	--color-bg: var(--color-teal-dark);
+	--color-text: #e7e5e4;
+	--color-text-dim: #a8a29e;
+	--color-heading: var(--color-beige);
+	--color-accent: var(--color-beige);
+	--color-link: #fffbeb;
+	--color-link-hover: var(--color-beige);
+	--color-card-bg: rgb(64 83 76 / 0.25);
+	--color-card-ring: var(--color-teal-light);
+	--color-card-text: #ffffff;
+	--color-strong: #ffffff;
+	--color-code: #a7f3d0;
+	--color-selection-bg: var(--color-beige);
+	--color-selection-text: var(--color-teal-dark);
+	/* Legacy aliases for compatibility */
+	--color-primary: var(--color-beige);
+	--color-secondary: var(--color-teal-dark);
+	--color-secondary-dim: var(--color-teal);
+	--color-secondary-dimmer: var(--color-teal-light);
+}
+
+/* Light theme overrides */
+[data-theme="light"] {
+	--color-bg: var(--color-beige-light);
+	--color-text: var(--color-stone-700);
+	--color-text-dim: #57534e;
+	--color-heading: var(--color-teal);
+	--color-accent: var(--color-teal);
+	--color-link: var(--color-teal);
+	--color-link-hover: var(--color-teal-dark);
+	--color-card-bg: var(--color-orange-50);
+	--color-card-ring: var(--color-teal);
+	--color-card-text: var(--color-text);
+	--color-strong: var(--color-teal-dark);
+	--color-code: #065f46;
+	--color-selection-bg: var(--color-teal);
+	--color-selection-text: #ffffff;
 }
 
 @layer base {
 	html {
-		@apply font-[400] font-sans lining-nums bg-secondary text-stone-200 hyphens-auto text-justify scroll-smooth;
+		@apply font-[400] font-sans lining-nums scroll-smooth transition-colors duration-300 bg-bg text-text;
 	}
 	dfn {
 		all: unset;
 		@apply border-dotted border-0 border-b-2 cursor-help;
 	}
 	h1, h2, h3, h4, h5, h6 {
-		@apply font-serif font-bold text-primary mb-4 text-left;
+		@apply font-serif font-bold mb-4 text-left text-heading;
 	}
 	.Card :is(h1, h2, h3, h4, h5, h6) {
-		@apply text-white;
+		@apply text-text;
 	}
-	h1 { @apply text-6xl mb-8 font-sans; }
-	h2 { @apply text-3xl; }
+	h1 { @apply text-6xl mb-8; }
+	h2 { @apply text-4xl; }
 	h3 { @apply text-2xl; }
 	:is(p, ul, ol):not(:last-child):not(:has(+ pre, + ul, + ol)) {
 		@apply mb-4;
@@ -39,48 +111,51 @@
 		@apply pl-8;
 	}
 	b, strong {
-		@apply text-white;
+		@apply text-strong;
 	}
 	::selection {
-		@apply bg-primary text-secondary;
+		@apply bg-selection-bg text-selection-text;
 	}
 	a:not(.clear) {
-		@apply border-b border-secondary-dimmer transition-colors duration-300 ease-out text-amber-50;
+		@apply border-b border-card-ring transition-colors duration-300 ease-out text-link;
 	}
 	a:not(.clear):hover {
-		@apply text-primary border-stone-500;
+		@apply text-link-hover border-stone-500;
 	}
 	code {
-		@apply text-sm;
+		@apply text-[0.92rem];
 	}
 	pre {
-		@apply border border-secondary-dim p-2 rounded-md mt-2 mb-4 w-full box-border overflow-x-auto text-sm !bg-transparent;
+		@apply p-2 rounded-md mt-2 mb-4 w-full box-border overflow-x-auto text-sm !bg-transparent border border-card-ring;
+	}
+	/* Shiki dual theme support - dark mode by default */
+	pre span {
+		color: var(--shiki-dark) !important;
+	}
+	[data-theme="light"] pre span {
+		color: var(--shiki-light) !important;
 	}
 	code:not(pre code) {
-		@apply text-emerald-100 px-0.5;
+		@apply px-0.5 text-code;
 	}
 	time {
 		@apply tabular-nums font-sans;
 	}
 	article {
-		@apply font-serif text-lg;
+		@apply font-sans;
 	}
 	summary {
 		@apply list-none cursor-pointer;
 	}
 	summary::after {
 		content: "[expand]";
-		@apply text-sm ml-2 text-stone-400 duration-300 ease-out;
+		@apply text-sm ml-2 duration-300 ease-out text-text-dim;
 	}
 	summary:hover::after {
-		@apply text-primary duration-300 ease-out;
+		@apply duration-300 ease-out text-accent;
 	}
 	details[open] > summary::after {
 		content: "[collapse]";
 	}
 
-
-	.emp b, .emp strong {
-		@apply text-amber-100;
-	}
 }

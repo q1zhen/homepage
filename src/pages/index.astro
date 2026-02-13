@@ -46,7 +46,7 @@ const reservedKeys = ["description", "begin", "end", "time", "url", "abstract"]
 		{category.data ? Object.entries(category.data).map(([name, info]: [string, any]) => (
 			<Card class="flex flex-col gap-2 font-serif">
 				<div>
-					<div class="font-sans text-sm font-bold text-stone-400">{
+					<div class="font-sans text-sm font-bold text-text/60">{
 						info?.time ? info?.time :
 							(!info?.begin
 								? "For a long time"

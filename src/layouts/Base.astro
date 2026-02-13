@@ -39,6 +39,21 @@ const canonicalURL = Astro.url.href;
 
 		<base target="_blank">
 		<ClientRouter />
+
+		<!-- Prevent flash of wrong theme -->
+		<script is:inline>
+			(function() {
+				const stored = localStorage.getItem('theme');
+				const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+				const theme = stored || (prefersDark ? 'dark' : 'light');
+				if (stored) {
+					document.documentElement.setAttribute('data-theme-pref', stored);
+				}
+				if (theme === 'light') {
+					document.documentElement.setAttribute('data-theme', 'light');
+				}
+			})();
+		</script>
 	</head>
 	<body>
 		<div class="flex flex-col w-full xl:flex-row xl:justify-center items-center xl:items-start gap-4 xl:gap-8 p-4">

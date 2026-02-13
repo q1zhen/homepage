@@ -19,5 +19,12 @@ export default defineConfig({
 				smartypants, { dashes: 'oldschool' }
 			],
 		],
+		shikiConfig: {
+			themes: {
+				light: 'github-light',
+				dark: 'github-dark',
+			},
+			defaultColor: false,
+		},
 	},
 });

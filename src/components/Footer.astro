@@ -1,6 +1,7 @@
 ---
 import { execSync } from "child_process";
 import dayjs from "dayjs";
+import ThemeToggle from "./ThemeToggle.astro";
 
 const contacts = [
 	{ platform: "Email", name: "hi@q1z.dev", url: "mailto:hi@q1z.dev" },
@@ -14,7 +15,7 @@ const lastModified = execSync(`git log -1 --pretty="format:%cI"`);
 		This site is open-source on <a href="https://github.com/q1zhen/homepage">GitHub</a>.<br/>
 		Last modified at <time datetime={lastModified}>{dayjs(lastModified).format("D MMMM YYYY")}</time>.
 	</p>
-	<nav class="mb-8 text-stone-300">
+	<nav class="mb-8 text-text">
 		{contacts.map((item) => (
 			<div>
 				<span class="font-black">{item.platform}</span>
@@ -22,7 +23,10 @@ const lastModified = execSync(`git log -1 --pretty="format:%cI"`);
 			</div>
 		))}
 	</nav>
-	<p>
-		&copy; <time>2024&ndash;{new Date().getFullYear()}</time> Yang Qizhen.
-	</p>
+	<div class="flex items-center justify-between">
+		<p class="mb-0">
+			&copy; <time>2024</time>&ndash;<time>{new Date().getFullYear()}</time> Yang Qizhen.
+		</p>
+	</div>
+	<div class="mt-8"><ThemeToggle /></div>
 </div>

@@ -13,11 +13,11 @@ const { post } = Astro.props;
 <a href={"/blog/post/" + post.id} target="_self" class="clear">
 	<Card>
 		<h3 class="mb-0">{post.data.title}</h3>
-		<div class="text-sm mt-0.5 mb-2 text-stone-400">
+		<div class="text-sm mt-0.5 mb-2 font-bold text-text/60">
 			<time>{dayjs(post.data.date).format("D MMMM YYYY")}</time>
 			&CenterDot;
 			<span class="uppercase">{post.data.category}</span>
 		</div>
-		<div class="font-serif">{post.data.description}</div>
+		<div class="font-sans">{post.data.description}</div>
 	</Card>
 </a>
