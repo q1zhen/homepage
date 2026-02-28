@@ -1,42 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Cactus+Classical+Serif&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chocolate+Classical+Sans&family=Geist:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import "tailwindcss";
-
-@font-face {
-	font-family: "Go";
-	src: url("/fonts/Go-Regular.ttf") format("truetype");
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Go";
-	src: url("/fonts/Go-Bold.ttf") format("truetype");
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Go";
-	src: url("/fonts/Go-Italic.ttf") format("truetype");
-	font-weight: 400;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Go";
-	src: url("/fonts/Go-Bold-Italic.ttf") format("truetype");
-	font-weight: 700;
-	font-style: italic;
-	font-display: swap;
-}
 
 @theme {
 	--font-cjk: "Cactus Classical Serif", "Noto Serif CJK KR", "Noto Serif KR", "Noto Serif CJK SC", "Noto Serif SC";
-	--font-sans: "Go", "Lato", "Carlito", "Calibri", var(--font-cjk), ui-sans-serif, system-ui, sans-serif;
-	--font-serif: "Tinos", "Liberation Serif", "Times New Roman", var(--font-cjk), "Noto Serif", "Georgia", ui-serif, serif;
+	--font-sans: "Geist", "Inter", "Helvetica Neue", "Arial", var(--font-cjk), ui-sans-serif, system-ui, sans-serif;
+	--font-serif: var(--font-sans);
+	/* --font-serif: "Tinos", "Liberation Serif", "Georgia", "Times New Roman", var(--font-cjk),  ui-serif, serif; */
 	--font-mono: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 	/* Base palette */
 	--color-beige: #D6BD98;
@@ -86,20 +55,20 @@
 
 @layer base {
 	html {
-		@apply font-[400] font-sans lining-nums scroll-smooth transition-colors duration-300 bg-bg text-text;
+		@apply font-[400] font-sans text-justify hyphens-auto lining-nums scroll-smooth transition-colors duration-300 bg-bg text-text;
 	}
 	dfn {
 		all: unset;
 		@apply border-dotted border-0 border-b-2 cursor-help;
 	}
 	h1, h2, h3, h4, h5, h6 {
-		@apply font-serif font-bold mb-4 text-left text-heading;
+		@apply font-sans font-bold mb-4 text-left text-heading;
 	}
 	.Card :is(h1, h2, h3, h4, h5, h6) {
 		@apply text-text;
 	}
 	h1 { @apply text-6xl mb-8; }
-	h2 { @apply text-4xl; }
+	h2 { @apply text-3xl; }
 	h3 { @apply text-2xl; }
 	:is(p, ul, ol):not(:last-child):not(:has(+ pre, + ul, + ol)) {
 		@apply mb-4;

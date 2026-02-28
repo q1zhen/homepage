@@ -14,6 +14,9 @@ importers:
       astro:
         specifier: ^5.2.5
         version: 5.2.5(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.2)(typescript@5.7.3)
+      astro-font:
+        specifier: ^1.1.0
+        version: 1.1.0
       dayjs:
         specifier: ^1.11.13
         version: 1.11.13
@@ -620,6 +623,9 @@ packages:
 
   array-iterate@2.0.1:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
+
+  astro-font@1.1.0:
+    resolution: {integrity: sha512-hj1A0MkaJTeaArBpf1m9s4Nxu1Bn9h0QiEPeR9Dfjle25pT4CH4higzuadWzCRSvhGO2SzbM11YwZEF+cmLDxg==}
 
   astro@5.2.5:
     resolution: {integrity: sha512-AYXyYkc+c5xbKTm48FyQA91y81nXyNPAaoyafR0LUugE4lAwuvIUcXDBfMzmbuP1lGRvsE33G2oypv6gbGaPFg==}
@@ -2140,6 +2146,8 @@ snapshots:
   aria-query@5.3.2: {}
 
   array-iterate@2.0.1: {}
+
+  astro-font@1.1.0: {}
 
   astro@5.2.5(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.2)(typescript@5.7.3):
     dependencies:
