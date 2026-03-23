@@ -127,4 +127,8 @@
 		content: "[collapse]";
 	}
 
+	/* Keep Android Open Banner */
+	.kao-banner a {
+		@apply border-0;
+	}
 }
