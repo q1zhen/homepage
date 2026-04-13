@@ -58,26 +58,24 @@ const reservedKeys = ["description", "begin", "end", "time", "url", "abstract"]
 					}
 				</div>
 				{info?.description && <div set:html={marked.parseInline(info?.description)} class="emp" />}
-				{(info && Object.entries(info).filter(i => !reservedKeys.includes(i[0])).length != 0) &&
-					<div>
-						{info && Object.entries(info).filter(i => !reservedKeys.includes(i[0]))
-							.map(([k, v]: [string, any]) => (
-								<div class="indent-[2em_hanging]">
-									{k.endsWith("URL") && v
-										? <>
-											<b class="font-sans">{k.replace("URL", "").trimEnd()}:</b>
-											<a href={v}>{v}</a>
-										</>
-										: <b class="font-sans">{k}:</b> <span set:html={marked.parseInline(v)} class="emp" />
-									}
-								</div>
-							))
-						}
-						{info?.abstract &&
-							<details><summary class="cursor-pointer font-sans"><b>Abstract</b></summary><div class="pl-[2em] text-sm font-serif text-justify" set:html={marked.parseInline(info?.abstract)} /></details>
-						}
-					</div>
-				}
+				<div>
+					{info && Object.entries(info).filter(i => !reservedKeys.includes(i[0]))
+						.map(([k, v]: [string, any]) => (
+							<div class="indent-[2em_hanging]">
+								{k.endsWith("URL") && v
+									? <>
+										<b class="font-sans">{k.replace("URL", "").trimEnd()}:</b>
+										<a href={v}>{v}</a>
+									</>
+									: <b class="font-sans">{k}:</b> <span set:html={marked.parseInline(v)} class="emp" />
+								}
+							</div>
+						))
+					}
+					{info?.abstract &&
+						<details><summary class="cursor-pointer font-sans"><b>Abstract</b></summary><div class="pl-[2em] text-sm font-serif text-justify" set:html={marked.parseInline(info?.abstract)} /></details>
+					}
+				</div>
 			</Card>
 		)) : <i>No information available.</i>
 		}
