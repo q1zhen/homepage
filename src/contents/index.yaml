@@ -9,6 +9,7 @@ Research and Publications:
     time: July 2025
     description: Published in [2025 IEEE 7th International Conference on Artificial Intelligence, Computer Science, and Information Processing (AICSIP)](https://ieeexplore.ieee.org/xpl/conhome/11427187/proceeding), in Hangzhou, 25&ndash;26 July 2025
     url: https://doi.org/10.1109/AICSIP65423.2025.11427279
+    ISBN: "`979-8-3315-2406-7`"
     abstract: Fluid dynamics simulations, a cornerstone for lots of scientific fields, often require solving partial differential equations (PDEs), e.g. Navier-Strokes equations. Traditional methods such as computational fluid dynamics (CFD) are typically computationally intensive and have limitations on real-time simulations and extreme boundary conditions. This research discovers the potential of U-Net-like deep learning architecture, as a visual model, to simulate fluid motions and integrates neural operators, particularly Fourier Neural Operator (FNO) and Adaptive Fourier Neural Operator (AFNO), into its architecture to enhance and specialize its capability in capturing features in fluid motions and provides an alternative approach. Experiments are done on shallow water equations (single property) and Navier-Strokes equations (multiple properties). The modified architecture showcases a significant improvement compared with the baseline model, especially in single-property simulations and shows promise in multi-property scenarios, with improvements up to 80% in the error.
 
 # Education:
